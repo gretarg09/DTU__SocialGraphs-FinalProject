@@ -1,3 +1,5 @@
+alert('Hallo Strákar eruði tilbúnir????')
+
 // Note: some methods can be found here: http://jsnetworkx.org/api_progress.html
 var G = new jsnx.Graph();
 
