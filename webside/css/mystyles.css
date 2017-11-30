@@ -1,0 +1,107 @@
+.search_btn {
+  background: #888c8f;
+  background-image: -webkit-linear-gradient(top, #888c8f, #5c7e94);
+  background-image: -moz-linear-gradient(top, #888c8f, #5c7e94);
+  background-image: -ms-linear-gradient(top, #888c8f, #5c7e94);
+  background-image: -o-linear-gradient(top, #888c8f, #5c7e94);
+  background-image: linear-gradient(to bottom, #888c8f, #5c7e94);
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 9px 15px 10px 20px;
+  text-decoration: none;
+}
+
+.search_btn:hover {
+  background: #cc15e8;
+  background-image: -webkit-linear-gradient(top, #cc15e8, #dfcce0);
+  background-image: -moz-linear-gradient(top, #cc15e8, #dfcce0);
+  background-image: -ms-linear-gradient(top, #cc15e8, #dfcce0);
+  background-image: -o-linear-gradient(top, #cc15e8, #dfcce0);
+  background-image: linear-gradient(to bottom, #cc15e8, #dfcce0);
+  text-decoration: none;
+}
+
+
+
+.image { 
+   position: relative; 
+    /* for IE 6 */
+    width: 100px;
+}
+
+
+.img-responsive {
+  width: 35vw;
+  max-width:200px;
+ -webkit-filter: grayscale(1);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+}
+
+.img-responsive:hover {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+}
+
+.img-responsive:active {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+}
+
+
+
+input[type=text] {
+  background: rgba(255, 255, 255, 0.5);
+  outline: none;
+  border: 3px solid black;
+  color: black;
+  font-family: 'Lato';
+  font-size: 2em;
+  padding: 8px;
+  margin-right: 0;
+  text-align:center;
+}
+
+
+::-webkit-input-placeholder {
+  color: black;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: black;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: black;
+}
+
+:-ms-input-placeholder {
+  color: black;
+}
+
+#poster {
+  margin-top: 20px
+}
+
+#poster p {
+  font-size: 2em;
+  color: black;
+}
+
+input:focus {
+  outline: none;
+}
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+input:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
+
+
+

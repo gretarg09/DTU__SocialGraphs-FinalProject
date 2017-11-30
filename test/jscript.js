@@ -1,5 +1,15 @@
-alert('Hallo Strákar eruði tilbúnir????')
 
+
+
+// Let´s get the data
+// $.getJSON("result.json", function(json) {
+//     //console.log(json); // this will show the info it in firebug console
+
+//     var movies_recomendations = json
+//     console.log(movies_recomendations)
+// });
+
+// console.log(json)
 // Note: some methods can be found here: http://jsnetworkx.org/api_progress.html
 var G = new jsnx.Graph();
 
@@ -17,7 +27,7 @@ G.addEdgesFrom([
 ]);
 
 
-
+	
 
 // drawing the network
 jsnx.draw(G, {
@@ -64,7 +74,8 @@ function list_shortest_paths() {
         results = document.getElementById("results")
 
 
-
+        var num_results_to_show = 3 
+        var shown_results = 0
         // write to the doom
         for (var key in keysSorted) {
 
@@ -79,6 +90,15 @@ function list_shortest_paths() {
 
             // insert the element to the doom 
             results.appendChild(para)
+
+            shown_results = shown_results + 1
+
+            if (shown_results >= num_results_to_show){
+            	break
+
+            }
+
+            
 
         }
 
