@@ -155,3 +155,28 @@ div.centerImage{
     margin: auto;
     
 }
+
+
+a.makeWhite{
+  color: white;
+  text-decoration: none;
+}
+a.makeWhite:hover{
+  
+  text-decoration: none;
+}
+
+
+a.makeBlack{
+  color: white;
+  text-decoration: none;
+}
+a.makeBlack:hover{
+  
+  text-decoration: none;
+}
+
+ul.add_black_color{
+  color: black;
+}
+
