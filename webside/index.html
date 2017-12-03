@@ -60,7 +60,7 @@
               <a class="nav-link js-scroll-trigger" href="#Conclusion">Conclusion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#searcher">Search engine</a>
+              <a class="nav-link js-scroll-trigger" href="#searcher">Recommendation engine</a>
             </li>
           </ul>
         </div>
@@ -77,7 +77,7 @@
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">Hi! have you been wondering how to make a movie search engine or are just in despreate need of reccomenation? If so, you have come to the right place, otherwise we reccomend you leave.</p>
+            <p class="text-faded mb-5">Hi! have you been wondering how to make a movie search engine or are you just in desperate need of recommendation? If so, you've come to the right place, otherwise we recommend you leave.</p>
             
           </div>
         </div>
@@ -88,57 +88,65 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-sm-10 mx-auto text-center">
-              <h2 class="section-heading">About the project</h2>
-              <hr class="my-4">
-              <p class=" mb-4"> How many times have you been searching Netflix, Hulu, HBO, IMDB or other similar web´s searching for a good movie to watch? How many times have you thought to yourself, shit I just want to watch a movie like Moneyball, what a great movie! or I really liked Shawshank Redemption where can I find something similar? If you have experienced this horrible life experiences, of either searching for a movie and not finding any, or just wanted to see something similar to your favorite movie. We are here for you. The engine uses both text analysis and network theory to predict what movies you want to see. By scrolling to the bottom of this webpage, or, by simply clicking this, you can access the search engine immediately. However, if you are interested about how the engine works, you can simply scroll downwards this website, where all the primary methods will be covered.
-              </p>
+            <h2 class="section-heading">About the project</h2>
+            <hr class="my-4">
+            <p class=" mb-4"> How many times have you been searching Netflix, Hulu, HBO, IMDb or other similar web services for a good movie to watch? How many times have you thought to yourself, 'Darn it! I just want to watch a movie like Moneyball, what a great movie!' or, 'I really liked Shawshank Redemption where can I find something similar?' If you have experienced this horrible life experience, of either searching for a movie and not finding any, or just wanting to see something similar to your favorite movie. We're here for you! We've created the solution, the last recommendation engine you'll need! The engine uses both text analysis and network theory to predict what movies you want to see based on what movies you like. By scrolling to the bottom of this webpage, or, by simply clicking <a href="#searcher"> here</a> you can access the recommendation engine immediately. However, if you are interested in reading about how the engine works, you can simply scroll downwards this website, where all the relevant info will be covered.
+            </p>
+
+      
 
               <h4 class="section-heading">The dataset</h4>
 
               <p>
-                In order to make the search engine, we needed to gather information about a loads of movie's. Furthermore, multiple datasets where needed to build the search engine, as all of them included some unique useful elements to build the engine. Firstly, a dataset from Kaggle was used. The dataset isn’t quite big, around 50 mb, but it contains a lot of information. It includes close to 20 properties for around 5000 movies. Next, as we wanted to make use of text analysis the storyline from IMDB was scraped for all the movies in the Kaggle dataset. In addition to that the IMDB rating for each movie in the Kaggle dataset was also scraped. Lastly, a ton of movie scripts and reviews for each movie in the dataset where found. The idea was to use sentiment analysis and similarity measures on these texts, to figure out if a movie is happy or similar to some other movie. All the datasets can be found and downloaded 
-                 <a href="https://www.dropbox.com/sh/uw5uw9n6gtfpii0/AAB5UGCmpe6XqpOqPdVUxPLda?dl=0"> 
+                In order to make the recommendation engine, we needed to gather information about a loads of movie's. Furthermore, multiple datasets where needed to build the recommendation engine, as all of them included some unique useful elements to build the engine. Firstly, a dataset from Kaggle was used. The dataset isn’t quite big, around 50 mb, but it contains a lot of information. It includes close to 20 properties for around 5000 movies. Next, as we wanted to make use of text analysis the storyline from IMDb was scraped for all the movies in the Kaggle dataset. In addition to that the IMDb rating for each movie in the Kaggle dataset was also scraped. Lastly, a ton of movie scripts and reviews for each movie in the dataset where found. The idea was to use sentiment analysis and similarity measures on these texts, to figure out if a movie is happy or similar to some other movie. All the datasets can be found and downloaded 
+                 <a class = "makeWhite" href="https://www.dropbox.com/sh/uw5uw9n6gtfpii0/AAB5UGCmpe6XqpOqPdVUxPLda?dl=0"> 
                   <span class="download">here.</span> 
                  </a>
                 Finally we did a lot of interesting analysis on the datasets and it is thourougly explained in the explainer notebook which can be accessed 
-                <a href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+                <a class = "makeWhite" href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
                   <span class="download">here</span>, 
                 </a>
                 this notebook contains all the code used in the analysis as well as more detailed explanations and conclusions of each part. We will only show subset of the analysis in this website and therefore we encourage you to take a look at the explainer notebook.
               </p>    
           </div>
 
+        </div>
 
+          </div>
+          
           <div class="col-lg-6">
              <h4 class="mb-4"> TMDb 5000 Movie dataset </h4>
                <p>
                 This was the central dataset in our analysis. This dataset fulfilled our requirements. It contain a vast amount of data and all of the information is gather From the site TMDb.com (The Movie Database). The dataset can be found and downloaded from this website.
                </p> 
              <h5 class="mb-4">statistics</h5>
-             <ul class="list-group add_black_color">
-                <li class="list-group-item">The dataset contains information about 4800 movies</li>
-                <li class="list-group-item">The number of cast members ~ 72000</li>
-                <li class="list-group-item">Number of movie's genre : 17</li>
-                <li class="list-group-item">The movies span years from 1916-2017</li>
+             <ul>
+                <li>The dataset contains information about 4800 movies</li>
+                <li>The number of cast members ~ 72000</li>
+                <li>Number of movie's genre : 17</li>
+                <li>The movies span years from 1916-2017</li>
               </ul>
           </div> 
         </div>   
       </div>
 
-      <div class="col-lg-3 col-sm-10 mx-auto text-center">
-      <div class="row">
 
-                   <div title="View the explanier notebook" class="col-lg-6 col-sm-10 mx-auto text-center">
-                     <a href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
-                        <h3 class ="download">Notebook </h3>
-                     </a>
-                  </div>
-                <div title="Download the Datasets" class="col-lg-6 col-sm-10 mx-auto text-center">
-                  <a href="https://www.dropbox.com/sh/uw5uw9n6gtfpii0/AAB5UGCmpe6XqpOqPdVUxPLda?dl=0">
-                    <h3 class ="download">Datasets</h3>
-                  </a>
-                </div>      
-      </div>  
+<div class="col-lg-3 col-sm-10 mx-auto text-center">
+<div class="row">
+
+             <div title="View the explanier notebook" class="col-lg-6 col-sm-10 mx-auto text-center">
+               <a href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+               <a class = "makeWhite" href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+                  <h3 class ="download">Notebook </h3>
+               </a>
+            </div>
+          <div title="Download the Datasets" class="col-lg-6 col-sm-10 mx-auto text-center">
+            <a href="https://www.dropbox.com/sh/uw5uw9n6gtfpii0/AAB5UGCmpe6XqpOqPdVUxPLda?dl=0">
+            <a class = "makeWhite" href="https://www.dropbox.com/sh/uw5uw9n6gtfpii0/AAB5UGCmpe6XqpOqPdVUxPLda?dl=0">
+              <h3 class ="download">Datasets</h3>
+            </a>
+          </div>      
+</div>  
 
     </section>
 
@@ -156,9 +164,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <p>In order to get a better feel for the dataset we take a look at some important measures of our datasets. We start off by looking at the scraped data from IMDB. The first figure shows the distribution of the ratings, while the second the storyline similarity distribution. From the first figure we can see that most ratings are around 6.5, the mean rating is 6.42. It is also interesting to see that there are very few movies in the extreme ends of the plot. The distribution looks somewhat like the gaussian distribution where the vast majority of the values fall around the mean value. As most people would rather watch movies with higher imdb rating, preferably higher than 7, we can use this information to influence the search engine.
+            <p>In order to get a better feel for the dataset we take a look at some important measures of our datasets. We start off by looking at the scraped data from IMDb. The first figure shows the distribution of the ratings, while the second the storyline similarity distribution. From the first figure we can see that most ratings are around 6.5, the mean rating is 6.42. It is also interesting to see that there are very few movies in the extreme ends of the plot. The distribution looks somewhat like the gaussian distribution where the vast majority of the values fall around the mean value. As most people would rather watch movies with higher IMDb rating, preferably higher than 7, we can use this information to influence the search engine.
 
-            The second figure then shows the distribution of similarities between the movie storylines. Here we used TF-IDF and cosine similarity to calculate the similarity between movies. Most movies do not have any similarity, as you would expect. It would be pretty awful if the engine would conclude that cat women and Shawshank where the one and the same, wouldn’t it? However, the similarity dose quite good. The movies which are similar get a higher value, fx Iron man 1 and 2 are pretty similar. The figure below shows the distribution of the similarities, there we see that although the cosine distance is between 0 and 1, the values in the distribution are between 0 and 0.5. We utilize this fact when building the network. Note that the figure below excludes the movies with zero similarity, as they are so many that you can't really see the distribution of the other similarities. However, we point readers to look at the <span class="download">explainer notebook</span> for more detailed description.
+            The second figure then shows the distribution of similarities between the movie storylines. Here we used TF-IDF and cosine similarity to calculate the similarity between movies. Most movies do not have any similarity, as you would expect. It would be pretty awful if the engine would conclude that 'Cat Woman' and 'Shawshank Redemption' where the one and the same, wouldn’t it? However, the similarity works quite well. The movies which are similar get a higher value, e.g. 'Iron Man' and 'Iron Man 2' are pretty similar. The figure below shows the distribution of the similarities, there we see that although the cosine distance is between 0 and 1, the values in the distribution are only between 0 and 0.5. We utilize this fact when building the network. Note that the figure below excludes the movies with zero similarity, as they are so many that you can't really see the distribution of the other similarities. However, we suggest that interested readers look at the <span class="download">explainer notebook</span> for a more detailed description.
 
               </p>
           </div>
@@ -172,7 +180,7 @@
           </div>
 
 
-        <p class = "addMargin">Now it’s time to go through the Kaggle dataset. As mentioned earlier, it has a bunch of variables. However, when building the network, they aren’t equally important. When watching a movie there are some things that are more important than others. You would watch a movie because it has great actors, directors, is a part of particular genre or has some exciting things about them. The figures below show the actor which have acted in most movies and the directors which have directed most movies, respectively. When looking at the names of both the actors one might think that Star Wars fan´s would be happy, as we have two great actors from there. Furthermore, it is surprising that Nicholas Cage is not in the most common actors, as he has acted allot! The directors are all well known, and as can be seen have directed many movies. One interesting thing regarding these results is that all the actors and the directors are male. This clearly shows the male dominance in the movie business. However, that is a material for another post.</p>
+        <p class = "addMargin">Now it’s time to go through the Kaggle dataset. As mentioned earlier, it has a bunch of variables. However, when building the network, they aren’t equally important. When watching a movie there are some things that are more important than others. You would watch a movie because it has great actors, directors, is a part of a particular genre or has some other exciting things about it. The figures below show the actors/actresses which have starred in the most movies and the directors which have directed most movies. When looking at the names of the actors/actresses one might think that Star Wars fans would be happy as we have two great actors from there. Furthermore, it is surprising that Nicholas Cage is not in the most common actors/actresses list, as he has starred in a lot of movies! The directors are all well known, and as can be seen have directed many movies. One interesting thing regarding these results is that these are all males. This clearly shows the male dominance in the movie business. However, that is a material for another post.</p>
         
 
            <div class="col-lg-6 text-center">
@@ -184,11 +192,11 @@
           </div>
 
           <p class = "addMargin">
-           Finally, we look at how the distribution of the genre is in the movies. We see that there is a huge class imbalance in our dataset, there are so many drama movies and so few TV movies. This is a problem we need to be aware of. However, if you search for a drama movie it is highly unlikely that you would like to see a TV movie. The correlation figure shows how much all the variables in the Kaggle dataset as well as the IMDB rating correlate with each other. 
+           Finally, we look at how the distribution of the genre is in the movies. We see that there is a huge class imbalance in our dataset, there are so many 'Drama' movies and so few 'TV Movies'. This is a problem we need to be aware of. The figure here show the count of movies associated with each genre (movies can have multiple genres). 
 
-           Next, we look at the popularity of keywords associated with each movie. Every movie in the Kaggle dataset has bunch of keywords associated to them. These words are supposed to describe the movie. It is interesting to see that women director is the most common keyword. It seems to be quite important to illustrate the fact that it was actually a woman that directed the movie. This again (we have seen this multiple times in the analysis) shows how male dominant this industry is. The fact that a woman directs the movie seems to be considered as a special feature of the movie and the movie producers think that it is important to illustrate that fact by having it as a keyword of the movie.
+           Next, we look at the popularity of keywords associated with each movie. Every movie in the Kaggle dataset has a bunch of keywords associated to them. These words are supposed to describe the movie. It is interesting to see that 'women director' is the most common keyword. It seems to be quite important to illustrate the fact that it was actually a woman that directed the movie. This again (we have seen this multiple times in the analysis) shows how male dominant this industry is. The fact that a woman directs the movie seems to be considered as a special feature of the movie and the movie producers think that it is important to illustrate that fact by having it as a keyword of the movie.
           Everything else seems to be like one could expect. The cities 'New York', 'Los Angeles' and 'London' are also highly used keywords which illustrates the fact that most movies are supposed to occur in these cities.
-          Sex and love are also on the list which is not surprising, we all know that humans like to watch movies that involve love and sex scenes. More interestingly is to see that violence, revenge and murder are more frequently used than love and sex.
+          'Sex' and 'Love' are also on the list which is not surprising, we all know that humans like to watch movies that involve love and sex scenes. More interestingly is to see that 'Violence', 'Revenge' and 'Murder' are more frequently used than 'Love' and 'Sex'.
 
 
          </p>
@@ -212,12 +220,12 @@
 
            <div class="col-lg-6 text-center addMargin">
             <p class = "addMargin">The figure here on the side shows the correlation between all the variables in the Kaggle dataset.
-              The correlation between the TMDb rating and the IMDb rating is interesting, there seems to be less positive correlation between these values than one would expect. This is most likely do to the fact that the TMDb rating is based on much less data, fewer votes on average, than the IMDb rating. Based on these information’s we decided to only use the IMDb ratings in further analysis of the dataset.
-            Interestingly we see that budget and revenue are highly positively correlated which means that if a movie has a high budget then the movie is more likely to get higher revenue in the end. Like everyone knows, you need to spend money to make money! The reader can look deeper into the figure to see how the variables in the dataset correlate. However, if the reader is lazy, like I am, I again highly recommend checking out the <span class="download">explanatory notebook</span> to be fed like a toddler.
+              The correlation between the TMDb rating and the IMDb rating is interesting, there seems to be less positive correlation between these values than one would expect. This is most likely do to the fact that the TMDb rating is based on much less data, fewer votes on average, than the IMDb rating. Based on this information we decided to only use the IMDb ratings in further analysis of the dataset.
+            Interestingly we see that the budget and the revenue of a movie is highly correlated which means that if a movie has a high budget then the movie is more likely to get higher revenue in the end. Like everyone knows, you need to spend money to make money! The reader can look deeper into the figure to see how the variables in the dataset correlate. However, if the reader is lazy, we again highly recommend checking out the <span class="download">explanatory notebook</span> to be fed like a toddler with juicy code and explanations.
 </p>
           </div>
 
-          <p class = "addMargin"> Next, we bring you the WORDCLOUD. The figures in the carousel down below show the keywords which describe each genre the best. It is interesting to see that woman director is frequently used keyword in comedies and romance movies. Love is frequently used in Fantasy movies, this is something one would probably not expect? or at least the writers of this post where clueless about. Most romantic movies seem to occur in New York, not Paris, I don’t believe the French will be happy with this. Either way, everything else is quite like you would expect, it is quite fun to see what keywords are used most frequently in each genre. I encourage an interested reader to take a look at these word clouds.</p>
+          <p class = "addMargin"> Next, we bring you the WORDCLOUD. The figures in the carousel down below show the keywords which describe each genre the best. It is interesting to see that 'woman director' is a frequently used keyword in comedies and romantic movies. Love is frequently used in 'Fantasy' movies, this is something one would probably not expect? Or at least the writers of this post where clueless about. Most romantic movies seem to occur in New York, not Paris, we don’t believe the French will be happy with this. Either way, everything else is quite like you would expect, it is quite fun to see what keywords are used most frequently in each genre. We encourage an interested reader to take a look at these word clouds.</p>
 
 
           <div class="w3-content w3-section text-center centerImage" style="max-width:500px">
@@ -373,6 +381,14 @@ function carousel() {
             <img class="img-fluid" src="img/degree_distribution2.PNG" alt="">
           </div>
 
+
+
+
+          <!-- now that we have used up all the 12 coloumbs in this row , lets go create a new "row class" , Alas in the same container -->
+      </div>  <!-- end of row -->
+      
+
+    </section>
       </div>
     </div>
   </section>
