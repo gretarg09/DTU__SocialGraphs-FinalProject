@@ -44,6 +44,9 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">Basic Stats</a>
             </li>
             <li class="nav-item">
@@ -71,21 +74,23 @@
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5">Hi! have you been wondering how to make a movie search engine or are just in despreate need of reccomenation? If so, you have come to the right place, otherwise we reccomend you leave.</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Whats the waz?</a>
+            
           </div>
         </div>
       </div>
     </header>
 
-    <section class="bg-primary" id="about">
+    <section class="col-lg-12 col-sm-12" id="about">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
-            <hr class="light my-4">
-            <p class="text-faded mb-4">A ultra mega tera network which yields all the best movies. All YOU have to do is simply to tell us what YOU think is a great movie, and we recommend equally great movies to YOU. What YOU have to lose?</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+          <div class="col-lg-8 col-sm-8 mx-auto text-center">
+            <h2 class="section-heading">About the project</h2>
+            <hr class="my-4">
+            <p class=" mb-4">A ultra mega tera network which yields all the best movies. All YOU have to do is simply to tell us what YOU think is a great movie, and we recommend equally great movies to YOU. What YOU have to lose?</p>
+
           </div>
+
+
         </div>
       </div>
     </section>
@@ -247,8 +252,8 @@
               <div class="search">
               
                 <input type="text" name="inputBox" placeholder="enter movie title here" id="term" />
-                <button id="search" class="search_btn">Find</button>
               
+                <button id="search" class="search_btn"><span class="icon-search"></span> <i class="icon-large icon-search"></i> Search</button>
 
 
                 <div id="poster"></div>
