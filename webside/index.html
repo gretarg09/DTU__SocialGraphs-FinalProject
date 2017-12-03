@@ -88,22 +88,43 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-sm-10 mx-auto text-center">
-            <h2 class="section-heading">About the project</h2>
-            <hr class="my-4">
-            <p class=" mb-4"> How many times have you been searching Netflix, Hulu, HBO, IMDB or other similar web´s searching for a good movie to watch? How many times have you thought to yourself, shit I just want to watch a movie like Moneyball, what a great movie! or I really liked Shawshank Redemption where can I find something similar? If you have experienced this horrible life experiences, of either searching for a movie and not finding any, or just wanted to see something similar to your favorite movie. We are here for you. The engine uses both text analysis and network theory to predict what movies you want to see. By scrolling to the bottom of this webpage, or, by simply clicking this, you can access the search engine immediately. However, if you are interested about how the engine works, you can simply scroll downwards this website, where all the primary methods will be covered.
-            </p>
-            <p>
-               In order to make the search engine, we needed to gather information about a loads of movie's. Furthermore, multiple datasets where needed to build the search engine, as all of them included some unique useful elements to build the engine. Firstly, a dataset from Kaggle was used. The dataset isn’t quite big, around 50 mb, but it contains a lot of information. It includes close to 20 properties for around 5000 movies. Next, as we wanted to make use of text analysis the storyline from IMDB was scraped for all the movies in the Kaggle dataset. In addition to that the IMDB rating for each movie in the Kaggle dataset was also scraped. Lastly, a ton of movie scripts and reviews for each movie in the dataset where found. The idea was to use sentiment analysis and similarity measures on these texts, to figure out if a movie is happy or similar to some other movie. All the datasets can be found and downloaded <span class="download">here</span>. Finally if you want to dig deep into the code you can access the explainer notebook <span class="download">here</span>, this notebook contains all the code used for building the website as well as a great explanation of that code.
-            </p>
+              <h2 class="section-heading">About the project</h2>
+              <hr class="my-4">
+              <p class=" mb-4"> How many times have you been searching Netflix, Hulu, HBO, IMDB or other similar web´s searching for a good movie to watch? How many times have you thought to yourself, shit I just want to watch a movie like Moneyball, what a great movie! or I really liked Shawshank Redemption where can I find something similar? If you have experienced this horrible life experiences, of either searching for a movie and not finding any, or just wanted to see something similar to your favorite movie. We are here for you. The engine uses both text analysis and network theory to predict what movies you want to see. By scrolling to the bottom of this webpage, or, by simply clicking this, you can access the search engine immediately. However, if you are interested about how the engine works, you can simply scroll downwards this website, where all the primary methods will be covered.
+              </p>
 
-      
+              <h4 class="section-heading">The dataset</h4>
 
-
-        </div>
-
+              <p>
+                In order to make the search engine, we needed to gather information about a loads of movie's. Furthermore, multiple datasets where needed to build the search engine, as all of them included some unique useful elements to build the engine. Firstly, a dataset from Kaggle was used. The dataset isn’t quite big, around 50 mb, but it contains a lot of information. It includes close to 20 properties for around 5000 movies. Next, as we wanted to make use of text analysis the storyline from IMDB was scraped for all the movies in the Kaggle dataset. In addition to that the IMDB rating for each movie in the Kaggle dataset was also scraped. Lastly, a ton of movie scripts and reviews for each movie in the dataset where found. The idea was to use sentiment analysis and similarity measures on these texts, to figure out if a movie is happy or similar to some other movie. All the datasets can be found and downloaded 
+                 <a class = "makeWhite" href="https://www.dropbox.com/sh/uw5uw9n6gtfpii0/AAB5UGCmpe6XqpOqPdVUxPLda?dl=0"> 
+                  <span class="download">here.</span> 
+                 </a>
+                Finally we did a lot of interesting analysis on the datasets and it is thourougly explained in the explainer notebook which can be accessed 
+                <a class = "makeWhite" href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+                  <span class="download">here</span>, 
+                </a>
+                this notebook contains all the code used in the analysis as well as more detailed explanations and conclusions of each part. We will only show subset of the analysis in this website and therefore we encourage you to take a look at the explainer notebook.
+              </p>    
           </div>
-          
+
+
+          <div class="col-lg-6">
+             <h4 class="mb-4"> TMDb 5000 Movie dataset </h4>
+               <p>
+                This was the central dataset in our analysis. This dataset fulfilled our requirements. It contain a vast amount of data and all of the information is gather From the site TMDb.com (The Movie Database). The dataset can be found and downloaded from this website.
+               </p> 
+             <h5 class="mb-4">statistics</h5>
+             <ul>
+                <li>The dataset contains information about 4800 movies</li>
+                <li>The number of cast members ~ 72000</li>
+                <li>Number of movie's genre : 17</li>
+                <li>The movies span years from 1916-2017</li>
+              </ul>
+          </div> 
+        </div>   
       </div>
+
 
 <div class="col-lg-3 col-sm-10 mx-auto text-center">
 <div class="row">
@@ -119,7 +140,6 @@
             </a>
           </div>      
 </div>  
-
     </section>
 
 
@@ -353,14 +373,9 @@ function carousel() {
             <img class="img-fluid" src="img/degree_distribution2.PNG" alt="">
           </div>
 
-
-
-
-          <!-- now that we have used up all the 12 coloumbs in this row , lets go create a new "row class" , Alas in the same container -->
-      </div>  <!-- end of row -->
-      
-
-    </section>
+      </div>
+    </div>
+  </section>
 
 
  <section class="bg-dark text-white" id = "Conclusion">
