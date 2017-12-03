@@ -387,7 +387,52 @@ function carousel() {
       </div>
     </section>
 
+    <section class="" id = "Networks">
 
+    <div class="container">
+      <div class="row">
+
+           <div class="col-lg-12">
+            <h2 class="mb-4 text-center">Networks</h2>
+            <hr class="my-4">
+          </div>
+         
+
+          <div class="col-lg-12">
+              <h4 class="mb-4">Intro</h4><p>The end goal is that a user inputs a name of a movie (which is a node a network) and from that movie we find all the shortest distances in the network and recommend those movies wich are closest. We decided it would be best to implement a weighted network, since nodes which are connected can have different importance. For example, if we have some movie, lets say 'Iron Man', our network can have multiple links from that movie. However, the movies it links to are not all equally similar to 'Iron Man', and thus we add a weights to the edges. Lastly a movie with few edges can be similar to some movies which are not connected to them directly, but there might be a short path in the network which connects them. We first tried three other networks that did not yield the desired result and wouldn't suffice as the basis of our recommendation engine. We therefore decided to combine those three networks and a bit more of data into one big network. The main network is built upon our analysis on the simpler networks. In order to make a link in the network, some similarities between the movies must exist. It was decided that what mattered in order to make a link between movies was: keywords, genres, actors/actresses and directors. In addition to that we looked at IMDb ratings and how similar the storylines of movies were.</p>
+          </div>  
+
+          <div class="col-lg-6">
+              <h4 class="mb-4">Constructing the network</h4><p>
+              When making the network various decisions regarding what constraints needed to be fulfilled to make an edge and what the weight of that edge should be. We start the discussion on the constraints. The constraints build upon four dimensions: genre, keywords, actors and director. All of these things are calculated in a similar fashion. We find all the common things in both movies, by their; genres, keywords, actors and directors and then we normalize it by dividing by the movie which has less items in each dimension. Each of these values are then multiplied by an importance coefficent, and if the total sum of the dimension varibles is more than 0.3 we make an edge. The value of the importance was choosen by guesswork and trial-and-error. Since there is no correct answer to which movies you recommend we tweaked it until we were happy with the results generated. There were some things we kept in mind though. Firstly, note that the sum of the dimension varibles can at maximum have the value of 1. Next when looking at the importance coefficent, one can observe that none of them has a value greater than 0.3. This forces our network to make a connection only if at least two dimension variables are shared. Next when assigning a weight to the edge we subtract both the sum of the varibles which satisfied the constraint and the similarities between the movies with 1. This way, movies that have similar keywords, genre, actors, directors and storylines are closer in the network. Note that we use the similarity between storylines only in deciding on the weight of the edge. The reason for this is that altough the movies might have similar storylines the movies could be very different. For example a romance and a horrors story might connect, depending on the language used in the storyline on IMDB. Furthermore, there exists only so few storylines.</p>
+          </div>  
+
+          <div class="col-lg-6">
+             <h4 class="mb-4">Information about the network</h4><p>We can see from the images below that this network looks good. The network has 4.794 nodes and 71.718 edges, the cluster coefficient is ~0.35 and modularity of our communities is ~0.59 which is quite high, especially considering there are only 9 communities. The degree distribution follows a power law. The minimum and maximum degree of the network is 0 and 394 respectively, the median degree is 13 and the mean degree is ~30. Deciding which properties and their weight to use took some time and was mostly fine-tuned through trial-and-error. Testing the recommendation engine proves that this works quite well and we're pleased with the results. We tested it on 'Iron Man 2' and the 5 most similar movies according to the network were: 'Iron Man', 'Iron Man 3', 'Captain America: Civil War', 'Zathura: A Space Adventure' and 'Avengers: Age Of Ultron'. Only movie that kinda stood out there in our eyes was 'Zathura' but it turns out that, among other things, it is directed by the same director as 'Iron Man 2'.</p>
+
+            <div class="col-lg-12 text-center">
+              <img class="img-fluid" src="img/main_network1.PNG" alt="">
+            </div>
+          </div> 
+
+          <div class="col-lg-6 text-center">
+            <img class="img-fluid" src="img/degree_distribution1.PNG" alt="">
+          </div>
+
+           <div class="col-lg-6 text-center">
+            <img class="img-fluid" src="img/degree_distribution2.PNG" alt="">
+          </div>
+
+          <div class="col-lg-12 text-center">
+            <img class="img-fluid" src="img/main_network_communities_giant.PNG" alt="">
+          </div>
+
+
+          <!-- now that we have used up all the 12 coloumbs in this row , lets go create a new "row class" , Alas in the same container -->
+      </div>  <!-- end of row -->
+      
+
+    </section>
 
 
  <section id="searcher">
