@@ -222,8 +222,10 @@ $.getJSON("all_movies.json", function(json) {
 
 // this function search the selected film
 function searcher(){
+    if (selected_movie != ''){
      document.getElementById('term').value = selected_movie;
      list_shortest_paths()
+ }
 
 }
 
@@ -235,35 +237,42 @@ function searcher(){
 // http://www.netflix.com/Search?lnkctr=srchrd-ips&v1=MOVIE-TITLE-HERE    finna tad a netflix
 
 
-// Bubbi seigir: nota google search apa
 function goToNetflix() {
-    alert('are you sure you wann go to Netflix?')
+    if (selected_movie != ''){
+        alert('are you sure you wann go to Netflix?')
 
-    window.location.href = "http://www.netflix.com/Search?lnkctr=srchrd-ips&v1=" + encodeURIComponent(selected_movie);
+        window.location.href = "http://www.netflix.com/Search?lnkctr=srchrd-ips&v1=" + encodeURIComponent(selected_movie);
+    }
 }
 
 function goToIMDB() {
-    alert('are you sure you wann go to IMDb?')
+    if (selected_movie != ''){
+        alert('are you sure you wann go to IMDb?')
 
-    window.location.href = "http://www.imdb.com/find?s=tt&q=" + encodeURIComponent(selected_movie);
+        window.location.href = "http://www.imdb.com/find?s=tt&q=" + encodeURIComponent(selected_movie);
+    }
 }
 
 function goToAmazon() {
-    alert('are you sure you want to go to the jungle?')
+    if (selected_movie != ''){
+        alert('are you sure you want to go to the jungle?')
 
-    window.location.href = "http://www.amazon.com/s/ref=nb_ss_d?tag=chriscoyier-20&url=search-alias%3Ddvd&field-keywords=" + encodeURIComponent(selected_movie);
+        window.location.href = "http://www.amazon.com/s/ref=nb_ss_d?tag=chriscoyier-20&url=search-alias%3Ddvd&field-keywords=" + encodeURIComponent(selected_movie);
+    } 
 }
 
 function goToGoogle() {
-    alert('are you sure you wann Google it?')
+    if (selected_movie != ''){
+        alert('are you sure you wann Google it?')
 
-    window.location.href = "https://www.google.com/#q=" + encodeURIComponent(selected_movie);
+        window.location.href = "https://www.google.com/#q=" + encodeURIComponent(selected_movie);
+    }
 }
 
 var last_selected = '';
 function removePoster() {
     
-    console.log(last_selected);
+    
     if (selected_movie != '' && selected_movie !== last_selected){ 
     // get all the posters that are to show
     var current_posters = [];
