@@ -302,10 +302,6 @@
          </p>
 
 
-        
-
-
-
           <div class="col-lg-6 text-center">
             <img class="img-fluid" src="img/genres.PNG" alt="">
           </div>
@@ -321,7 +317,9 @@
            <div class="col-lg-6 addMargin">
             <p class = "addMargin">The figure here on the side shows the correlation between variables in the Kaggle dataset.
               The correlation between the TMDb rating and the IMDb rating is interesting, there seems to be less positive correlation between these values than one would expect. This is most likely do to the fact that the TMDb rating is based on much less data, fewer votes on average, than the IMDb rating. Based on this information we decided to only use the IMDb ratings in further analysis of the dataset.
-            Interestingly we see that the budget and the revenue of a movie is highly correlated which means that if a movie has a high budget then the movie is more likely to get higher revenue in the end. Like everyone knows, you need to spend money to make money! The reader can look deeper into the figure to see how the variables in the dataset correlate. However, if the reader is lazy, we again highly recommend checking out the <span class="download">explanatory notebook</span> to be fed like a toddler with juicy code and explanations.
+            Interestingly we see that the budget and the revenue of a movie is highly correlated which means that if a movie has a high budget then the movie is more likely to get higher revenue in the end. Like everyone knows, you need to spend money to make money! The reader can look deeper into the figure to see how the variables in the dataset correlate. However, if the reader is lazy, we again highly recommend checking out the  <a href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+                  <span class="download">explanatory notebook</span>
+                </a> to be fed like a toddler with juicy code and explanations.
 </p>
           </div>
 
@@ -607,14 +605,19 @@ function carousel() {
 
 
             <p>
-            Bla Bla Bla
+            We have discussed how we created a network that links similar movies together. Now the question is, how did we use this to get recommendation for each movie? After having created the network the process of recommending movie can be split up into three parts. 
 
-            <br>
-            <br>
-            Bla bla bla
-            <br>
-            <br>
-            Bla bla bla
+            <ul>
+                <li>Firstly, we calculated the shortest path from all movies to all other movies in the network. To accomplish this we used Djikstra shortest path: The algorithm creates a tree of shortest paths from the starting vertex, the source, to all other points in the graph.</li>
+                <li>Secondly, we used IMDb rating to shorten the distances. This will yield a shorter distance to movies which have higher IMDb rating. This should improve our search engine, since most people want to see highly rated movies rather than bad ones.</li>
+                <li>Last but not least, we needed to handle the fact that some movies (nodes) do not have any links. However, we still want to recommend movies when people like to find similar movies to them.  In this case we depend only on the IMDb rating and the similarity between the movies' storylines. Thus we will only recommend a movie which should be somewhat similar and has a good IMDb rating.   </li>
+            </ul>
+
+            There you have it, after having executed these steps we have created a recommendation engine that works quite will in our opinion. You can try it out for yourself in the following section. If you want to dig deeper into the analysis and the code behind the engine you can check out our 
+            <a class = "makeWhite" href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+                  <span class="download">explanatory notebook.</span>
+                </a>
+
             </p>
 
 
