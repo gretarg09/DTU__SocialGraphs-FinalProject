@@ -427,7 +427,6 @@ function carousel() {
     
 
     <section class="bg-dark text-white" id = "Sentimental">
-      <div class="container text-center">
 
         <h2 class="mb-4">Text Analysis</h2>
         <hr class="my-4">
@@ -504,9 +503,6 @@ function carousel() {
 
           <div class="col-lg-12 text-center" style ="margin: 20px"></div>
 
-          <div class="text-center">
-
-           <h4 class="mb-4">Some final thoughts in the end</h4>
 
           <p> 
           We did a lot of analysis on the manuscripts, the initial idea was to use these findings as a variable into the recommendation engine. We did not manage to find manuscripts for all of the movies in our dataset and therefore we did not think that it would be a good idea to use this information in the recommendation engine. What we did instead was to scrape the movie's storylines from IMDb and use similarity measures on them as a variable into our recommendation engine which resulted in a improved recommendation engine.
@@ -520,7 +516,6 @@ function carousel() {
           So for further development of the recommendation engine we could've spent more time on finding more manuscripts for the movies or we could've downloaded the subtitles for each movie which should provide us with similar information about the movie.  
           </p>
 
-          </div>
     
 
         </div>
@@ -585,7 +580,7 @@ function carousel() {
           </div>
 
           <div class="col-lg-12 text-center">
-            <img class="img-fluid" src="img/main_network1.PNG" alt="">
+            <img class="img-fluid" src="img/main_network1.png" alt="">
           </div>
 
 
@@ -593,7 +588,7 @@ function carousel() {
           <div class="col-lg-12">
               <h4 class="mb-4">Communities</h4>
               <p>
-                  To identify communities in this network we used the Louvain community detection algorithm which identifies communities in a network. The communities are then movies that are all closely connected with each other but not as much to movies in other communities. We ran the algorithm on the giant component of our network and the result can be seen in the figure here down below. The algorithm found 8 communities and the modularity 0.592. It is interesting to inspect how the communities found in the network actually correspond to the genres of the movies, this is illustrated in the figure here down below. We can see that we are definitely on to something here, at least in respect to genres. The communities have a correlation to genres. In community 2 we have 'kids' movies, that is 'Family, 'Adventure' and 'Animation'. There are five communities where the majority of the films are labeled as romantic movies, although they differ a bit, e.g. community 4 clearly has romantic films with some thriller in it while the other romantic communities don't. Community 6 is clearly for exciting movies, 'Thriller', 'Action' and 'Crime are high there. In community 3 we have 'Action' movies, also high in 'Sci-fi' and 'Adventure'. Community 7 is almost only documentaries, which is good, if you like to watch documentaries thats where you should look.
+                  To identify communities in this network we used the Louvain community detection algorithm which identifies communities in a network. The communities are then movies that are all closely connected with each other but not as much to movies in other communities. We ran the algorithm on the giant component of our network and the result can be seen in the figure here down below. The algorithm found  8 communities and the modularity of the community division was found to be ~0.592. It is interesting to inspect how the communities found in the network actually correspond to the genres of the movies, this is illustrated in the figure here down below. We can see that we are definitely on to something here, at least in respect to genres. The communities have a correlation to genres. In community 2 we have 'kids' movies, that is 'Family, 'Adventure' and 'Animation'. There are five communities where the majority of the films are labeled as romantic movies, although they differ a bit, e.g. community 4 clearly has romantic films with some thriller in it while the other romantic communities don't. Community 6 is clearly for exciting movies, 'Thriller', 'Action' and 'Crime are high there. In community 3 we have 'Action' movies, also high in 'Sci-fi' and 'Adventure'. Community 7 is almost only documentaries, which is good, if you like to watch documentaries thats where you should look.
 
                   <br>
                   <br>
@@ -611,12 +606,12 @@ function carousel() {
 
 
           <div class="col-lg-12 text-center">
-            <img class="img-fluid" src="img/main_network_communities_giant.PNG" alt="">
+            <img class="img-fluid" src="img/main_network_communities_giant.png" alt="">
           </div>
 
 
           <div class="col-lg-12 text-center">
-            <img class="img-fluid" src="img/communities.PNG" alt="">
+            <img class="img-fluid" src="img/communities.png" alt="">
           </div>
 
           <!-- now that we have used up all the 12 coloumbs in this row , lets go create a new "row class" , Alas in the same container -->
@@ -681,6 +676,7 @@ function carousel() {
 
 
                 <div id="poster"></div>
+                <div class="col-lg-6 text-center" style ="margin: 10px"></div>
           <div id="buttons"></div>
 
             </div>
