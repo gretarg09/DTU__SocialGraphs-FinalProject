@@ -425,11 +425,13 @@ function carousel() {
     
 
     <section class="bg-dark text-white" id = "Sentimental">
-      <div class="container text-center">
+      <div class="container">
+        <div class="text-center">
 
         <h2 class="mb-4">Text Analysis</h2>
         <hr class="my-4">
         <div class="row">
+        </div>
         
         <p>The initial idea was to find manuscripts for all of the 5000 movies from the Kaggle dataset. Then analyze these manuscripts and calculate both similarities between movies and sentiment score for each movie. This information could then be fed to the recommendation engine as two variables. This would help the engine distinguish between happy and sad movies. Furthermore, the similarity measure could help the recommendation engine to find movies with similar vocabulary. </p>
 
@@ -502,10 +504,10 @@ function carousel() {
 
           <div class="col-lg-12 text-center" style ="margin: 20px"></div>
 
-          <div class="text-center">
+          <div class="col-lg-12 text-center">
 
-           <h4 class="mb-4">Some final thoughts</h4>
-
+              <h4 class="mb-4">Some final thoughts</h4>
+          </div>
           <p> 
           We did a lot of analysis on the manuscripts, the initial idea was to use these findings as a variable into the recommendation engine. We did not manage to find manuscripts for all of the movies in our dataset and therefore we did not think that it would be a good idea to use this information in the recommendation engine. What we did instead was to scrape the movie's storylines from IMDb and use similarity measures on them as a variable into our recommendation engine which resulted in a improved recommendation engine.
           </p>
@@ -518,7 +520,7 @@ function carousel() {
           So for further development of the recommendation engine we could've spent more time on finding more manuscripts for the movies or we could've downloaded the subtitles for each movie which should provide us with similar information about the movie.  
           </p>
 
-          </div>
+          
     
 
         </div>
@@ -679,6 +681,7 @@ function carousel() {
 
 
                 <div id="poster"></div>
+                <div class="col-lg-6 text-center" style ="margin: 10px"></div>
           <div id="buttons"></div>
 
             </div>
