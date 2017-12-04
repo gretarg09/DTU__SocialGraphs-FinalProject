@@ -168,7 +168,7 @@ a.makeWhite:hover{
 
 
 a.makeBlack{
-  color: white;
+  color: black;
   text-decoration: none;
 }
 a.makeBlack:hover{
