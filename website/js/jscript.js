@@ -116,7 +116,7 @@ var getPoster = function(val) {
 function list_shortest_paths() {
 
     // Let´s get the data
-    $.getJSON("search_results3.json", function(json) {
+    $.getJSON("search_results.json", function(json) {
         //console.log(json); // this will show the info it in firebug console
 
         movies_recomendations = json
