@@ -263,7 +263,7 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
+          <div class="col-lg-12">
             <p>In order to get a better feel for the dataset we take a look at some important measures of our datasets. We start off by looking at the scraped data from IMDb. The first figure shows the distribution of the ratings, while the second the storyline similarity distribution. From the first figure we can see that most ratings are around 6.5, the mean rating is 6.42. It is also interesting to see that there are very few movies in the extreme ends of the plot. The distribution looks somewhat like the gaussian distribution where the vast majority of the values fall around the mean value. As most people would rather watch movies with higher IMDb rating, preferably higher than 7, we can use this information to influence the search engine.
 
             The second figure then shows the distribution of similarities between the movie storylines. Here we used TF-IDF and cosine similarity to calculate the similarity between movies. Most movies do not have any similarity, as you would expect. It would be pretty awful if the engine would conclude that 'Cat Woman' and 'Shawshank Redemption' where the one and the same, wouldn’t it? However, the similarity works quite well. The movies which are similar get a higher value, e.g. 'Iron Man' and 'Iron Man 2' are pretty similar. The figure below shows the distribution of the similarities, there we see that although the cosine distance is between 0 and 1, the values in the distribution are only between 0 and 0.5. We utilize this fact when building the network. Note that the figure below excludes the movies with zero similarity, as they are so many that you can't really see the distribution of the other similarities. However, we suggest that interested readers look at the <span class="download">explainer notebook</span> for a more detailed description.
@@ -318,7 +318,7 @@
             <img class="img-fluid" src="img/CorrelationFig1.PNG" alt="">
           </div>
 
-           <div class="col-lg-6 text-center addMargin">
+           <div class="col-lg-6 addMargin">
             <p class = "addMargin">The figure here on the side shows the correlation between variables in the Kaggle dataset.
               The correlation between the TMDb rating and the IMDb rating is interesting, there seems to be less positive correlation between these values than one would expect. This is most likely do to the fact that the TMDb rating is based on much less data, fewer votes on average, than the IMDb rating. Based on this information we decided to only use the IMDb ratings in further analysis of the dataset.
             Interestingly we see that the budget and the revenue of a movie is highly correlated which means that if a movie has a high budget then the movie is more likely to get higher revenue in the end. Like everyone knows, you need to spend money to make money! The reader can look deeper into the figure to see how the variables in the dataset correlate. However, if the reader is lazy, we again highly recommend checking out the <span class="download">explanatory notebook</span> to be fed like a toddler with juicy code and explanations.
@@ -422,6 +422,7 @@ function carousel() {
 
     <section class="bg-dark text-white" id = "Sentimental">
       <div class="container text-center">
+
         <h2 class="mb-4">Text Analysis</h2>
         <hr class="my-4">
         <div class="row">
@@ -438,10 +439,10 @@ function carousel() {
 
              We start off by looking at the 10 movies with the 'happiest' and 'unhappiest' movie manuscripts. Happy in the sens that the mean sentiment value of the manuscrip is high and vice versa for the 'unhappy' manuscripts. Looking at the figures down bellow we can't say that the results are suprising. The movies with the highest average sentiment score are all so called "feel good movies", which any sane person would expect, before hand, to have quite happy vocabulary. When taking a look at the movies with the  lowest sentiment score, we are not suprised. These are all movies that are either action or horror movies, where the movie envolves around something dark like death or war. </p>
            <p>
-            Next we take a look at the variance. If a movie has a large variance in the sentiment values of its manuscript then the vocabulary used in the manuscript must be quite diversed, meaning that that the movie  must contain a lot of happy and unhappy words. The 10 movies with most variance are movies that are considered as a Thriller/Action/Crime/Horror and a Comedy/Romance. Like for example the movie Deadpool; it is a dark comedy which is also consider to be a action or a adventure movie. Deadpool is a comedy that contains a lot of violence and so it is understandable that the happiness rank of the words used in the manuscript vary alot.
+            Next we take a look at the variance. If a movie has a large variance in the sentiment values of its manuscript then the vocabulary used in the manuscript must be quite diversed, meaning that that the movie  must contain a lot of happy and unhappy words. The 10 movies with most variance are movies that are both considered as a Thriller/Action/Crime/Horror and a Comedy/Romance. Like for example the movie Deadpool; it is a dark comedy which is also consider to be a action or a adventure movie. Deadpool is a comedy that contains a lot of violence and so it is understandable that the happiness rank of the words used in the manuscript vary alot.
 
 
-            The bottom 10 list are all movies that is either about something happy, like comedies or romance movies or they are on the darker side of spectrum meaning that the storyline is about something which can be considered unhappy, like Horror movies, dark Drama movies or dark Action/Thriller movies. Therefore the sentimental value of the words used in the manuscript do not vary as much.
+            The bottom 10 list are all movies that are either about something happy, like comedies or romance movies or they are on the darker side of spectrum meaning that the storyline is about something which can be considered unhappy, like Horror movies, dark Drama movies or dark Action/Thriller movies. Therefore the sentimental value of the words used in the manuscript do not vary as much.
 
            </p>
            
@@ -458,13 +459,34 @@ function carousel() {
               
            
 <div class="col-lg-6 text-center" style ="margin: 10px"></div>
-    <p>Note: We do not have equal amount of manuscripts for each genre, therefore the result cannot be taken as the whole truth but this still gives us a good idea of the behavior.
-The genres Music, Romance, Comedy, Drama and Family are the 5 genres with the highest average of the mean sentiment values like one could have expected. These genres of movies seem to have the happiest manuscripts on average based on the LabMT wordlist.
-Similarly it is easy to understand why War, Western, Action and Horror movies have low mean sentiment values on average. Movies within these genres are often about the dark sides of life and therefore the moviescripts contain a lot of words that we human consider unhappy words. Words like war, guns, fights and so on.
-The genres History, Drama, Comedy and Fantasy seem to have the most variance of the mean happyness value of the manuscripts. This shows us that these genres have diverse movies within the genre, meaning that some of the movies within the genre are considered to be sad or unhappy while other movies in the same genre are considered happy. It is trivial to agree with these findings. Let's take the History genre for example; one history movie can be about war which would be considered something sad and then there could be another history movie in the database that is about how love has changed over the years, that movie would be consider to be quite positive or happy.
-The movies Family and Western have the least variance within the average of the mean sentiment values. This is also something that we can easily agree with. Movies that are classified as family movies are most often about something that is happy, something that the whole family can watch together and are so called "feel good movies". There are not many family movies that are about something dark and unhappy and Therefore the median and the mean sentiment value is quite high for these types of movies and the variance of the mean value is low. In contrast, western movies are nearly all about something dark; fights, war, robbery or life struggle. There are few happy western movies out there, at least we haven't seen a single one in our life.
-The genre Science Fiction contains the least average variance within the sentiment values of each manuscript. This came as a surprise to us. The vocabulary used in the Science Fiction's manuscripts does not vary as much between very happy words and very unhappy words like the for the other genres.
-The genres with the highest average variance within the vocabulary of the manuscripts is Music, Romance, Comedy, Fantasy and Western. The first three genres are understandable because one can expect movies of these genres to have vocabulary that varies quite alot between happy and sad words but the genre Western caught our attention. The vocabulary used in the western movies seems to be diverse which we did not expect in the beginning but when you think about it these movies often contain some romantic stories within the storyline and therefore most often contain some amount of words that are considered to be happy.</p>
+
+
+    <p> Next we will take a look at if there is a difference in happiness rank between different movie genres. We do not have equal amount of manuscripts for each genre, therefore the result cannot be taken as the whole truth but this still gives us a good idea of the behavior. Looking at the figures here down below  </p>
+
+     <ul>
+        <li>
+            The genres Music, Romance, Comedy, Drama and Family are the 5 genres with the highest average of the mean sentiment values like one could have expected. These genres of movies seem to have the happiest manuscripts on average based on the LabMT wordlist.
+
+        </li>
+        <li>
+            Similarly it is easy to understand why War, Western, Action and Horror movies have low mean sentiment values on average. Movies within these genres are often about the dark sides of life and therefore the moviescripts contain a lot of words that we human consider unhappy words. Words like war, guns, fights and so on.
+        </li>
+        <li>
+            The genres History, Drama, Comedy and Fantasy seem to have the most variance of the mean happiness value of the manuscripts (see boxplot). This shows us that these genres have diverse movies within the genre, meaning that some of the movies within the genre are considered to be sad or unhappy while other movies in the same genre are considered happy. It is trivial to agree with these findings. Let's take the History genre for example; one history movie can be about war which would be considered something sad and then there could be another history movie in the database that is about how love has changed over the years, that movie would be consider to be quite positive or happy.
+        </li>
+        <li>
+            The movies Family and Western have the least variance within the average of the mean sentiment values (see boxplot). This is also something that we can easily agree with. Movies that are classified as family movies are most often about something that is happy, something that the whole family can watch together and are so called "feel good movies". There are not many family movies that are about something dark and unhappy and therefore the median and the mean sentiment value is quite high for these types of movies and the variance of the mean values is low. In contrast, western movies are nearly all about something dark; fights, war, robbery or life struggle. There are few happy western movies out there, at least we haven't seen a single one in our life.
+        </li>
+        <li>
+            The genre Science Fiction contains the least average variance within the sentiment values of each manuscript. This came as a surprise to us. The vocabulary used in the Science Fiction's manuscripts does not vary as much between very happy words and very unhappy words like the for the other genres.
+        </li>
+
+        <li>
+          The genres with the highest average variance within the vocabulary of the manuscripts is Music, Romance, Comedy, Fantasy and Western. The first three genres are understandable because one can expect movies of these genres to have vocabulary that varies quite a lot between happy and sad words but the genre Western caught our attention. The vocabulary used in the western movies seems to be diverse which we did not expect in the beginning. However, when you think about it these movies often contain some romantic stories within the storyline and therefore most often contain some amount of words that are considered to be very happy. 
+
+        </li>
+      </ul>
+
 
            <div class="col-lg-6 text-center">
             <img class="img-fluid" src="img/manuscriptBox.PNG" alt="">
@@ -474,8 +496,26 @@ The genres with the highest average variance within the vocabulary of the manusc
             <img class="img-fluid" src="img/sentimentAnalysisGenredata.PNG" alt="">
           </div>
 
+          <div class="col-lg-12 text-center" style ="margin: 20px"></div>
+
+          <div class="text-center">
+
+           <h4 class="mb-4">Some final thoughts in the end</h4>
+
+          <p> 
+          We did a lot of analysis on the manuscripts, the initial idea was to use these findings as a variable into the recommendation engine. We did not manage to find manuscripts for all of the movies in our dataset and therefore we did not think that it would be a good idea to use this information in the recommendation engine. What we did instead was to scrape the movie's storylines from IMDb and use similarity measures on them as a variable into our recommendation engine which resulted in a improved recommendation engine.
+          </p>
+          <p>
+          That being said, we consider these analysis to be a proof of concept, we have proven that the result of a sentiment analysis of the manuscripts could be used as a variable into a recommendation engine. For example both the mean sentiment value of a movie's manuscript and the variance of the sentiment values of the movie's manuscripts provide useful information about what kind of a movie we are talking about. For example if the mean sentiment value is high then the movie is most likely a so called 'feel good movie' and we could recommend movies that have similar mean sentiment values. Likewise we have discussed how the  variance of the sentiments give a valuable information about the movie, if the variance is high then there is a lot of contradictions in the storyline meaning for example that the movie is either a dark movie that has some happy moments in it (romance or comedy) or that the movie is most likely a dark comedy.
           
-      
+          </p>
+
+          <p>
+          So for further development of the recommendation engine we could've spent more time on finding more manuscripts for the movies or we could've downloaded the subtitles for each movie which should provide us with similar information about the movie.  
+          </p>
+
+          </div>
+    
 
         </div>
 
@@ -494,12 +534,21 @@ The genres with the highest average variance within the vocabulary of the manusc
          
 
           <div class="col-lg-12">
-              <h4 class="mb-4">Intro</h4><p>The end goal is that a user inputs a name of a movie (which is a node in a network) and from that movie we find all the shortest distances in the network and recommend these movies wich are closest. We decided it would be best to implement a weighted network, since nodes which are connected can have different importance. For example, if we have some movie, lets say 'Iron Man', our network can have multiple links from that movie. However, the movies it links to are not all equally similar to 'Iron Man', and thus we add weights to the edges. Lastly a movie with few edges can be similar to some movies which are not connected to them directly, but there might be a short path in the network which connects them. We first tried three other networks that did not yield the desired result and wouldn't suffice as the basis of our recommendation engine. We therefore decided to combine those three networks and a bit more of data into one big network. The main network is built upon our analysis on the simpler networks. In order to make a link in the network, some similarities between the movies must exist. It was decided that what mattered in order to make a link between movies was: keywords, genres, actors/actresses and directors. In addition to that we looked at IMDb ratings and how similar the storylines of movies were.</p>
+              <h4 class="mb-4">Intro</h4><p>The end goal is that a user inputs a name of a movie (which is a node in a network) and from that movie we find all the shortest distances in the network and recommend the movies which are closest. We decided it would be best to implement a weighted network, since nodes which are connected can have different importance. For example, if we have some movie, lets say 'Iron Man', our network can have multiple edges from that movie. However, the movies it links to are not all equally similar to 'Iron Man', and thus we add weights to the edges. Lastly a movie with few edges can be similar to some movies which are not connected to them directly, but there might be a short path in the network which connects them. We first tried three other networks that did not yield the desired result and wouldn't suffice as the basis of our recommendation engine. We therefore decided to combine those three networks and a bit more of data into one big network. The main network is built upon our analysis on the simpler networks, the basic statistic and text analysis. In order to make a edge in the network, some similarities between the movies must exist. It was decided that what mattered in order to make a edge between movies was the following: 
+
+              <ul>
+                <li>A ratio of common keywords</li>
+                <li>A ratio of common genres</li>
+                <li>A ratio of common actors/actresses</li>
+                <li>A ratio of common directors</li>
+                <li> In addition to that we looked at IMDb ratings and how similar the storylines of movies are.</li>
+              </ul>
+            </p>
           </div>  
 
           <div class="col-lg-6">
               <h4 class="mb-4">Constructing the network</h4><p>
-              When making the network various decisions regarding what constraints needed to be fulfilled to make an edge and what the weight of that edge should be. We start the discussion on the constraints. The constraints build upon four dimensions: genre, keywords, actors and director. All of these things are calculated in a similar fashion. We find all the common things in both movies, by their; genres, keywords, actors and directors and then we normalize it by dividing by the movie which has less items in each dimension. Each of these values are then multiplied by an importance coefficent, and if the total sum of the dimension varibles is more than 0.3 we make an edge. The value of the importance was choosen by guesswork and trial-and-error. Since there is no correct answer to which movies you recommend we tweaked it until we were happy with the results generated. Howver, there were some things we kept in mind though. Firstly, note that the sum of the dimension varibles can at maximum have the value of 1. Next when looking at the importance coefficent, one can observe that none of them has a value greater than 0.3. This forces our network to make a connection only if at least two dimension variables are shared. Next when assigning a weight to the edge we subtract both the sum of the varibles which satisfied the constraint and the similarities between the movies with 1.4 (so we dont get any negative weights). This way, movies that have similar keywords, genre, actors, directors and storylines are closer in the network. Note that we use the similarity between storylines only in deciding on the weight of the edge. The reason for this is that altough the movies might have similar storylines the movies could be very different. For example a romance and a horrors story might connect, depending on the language used in the storyline on IMDB. Furthermore, there exists only so few storylines.</p>
+              When making the network various decisions regarding what constraints needed to be fulfilled to make an edge and what the weight of that edge should be. We start the discussion on the constraints. The constraints build upon four dimensions: genre, keywords, actors and director. All of these things are calculated in a similar fashion. We find all the common things in both movies, by their; genres, keywords, actors and directors and then we normalize it by dividing by the movie which has less items in each dimension. Each of these values are then multiplied by an importance coefficent, and if the total sum of the dimension varibles is more than 0.3 we make an edge. The value of the importance was choosen by guesswork and trial-and-error. Since there is no correct answer to which movies you recommend we tweaked it until we were happy with the results generated. However, there were some things we kept in mind though. Firstly, note that the sum of the dimension varibles can at maximum have the value of 1. Next when looking at the importance coefficent, one can observe that none of them has a value greater than 0.3. This forces our network to make a connection only if at least two dimension variables are shared. Next when assigning a weight to the edge we subtract both the sum of the varibles which satisfied the constraint and the similarities between the movies with 1.4 (so we dont get any negative weights). This way, movies that have similar keywords, genre, actors, directors and storylines are closer in the network. Note that we use the similarity between storylines only in deciding on the weight of the edge. The reason for this is that altough the movies might have similar storylines the movies could be very different. For example a romance and a horror story might connect, depending on the language used in the storyline on IMDB. Furthermore, there exists only so few storylines.</p>
           </div>  
 
           <div class="col-lg-6">
@@ -552,7 +601,7 @@ The genres with the highest average variance within the vocabulary of the manusc
         <p>We are all huge movie fans and therefore we had a lot of fun doing this project. We did a lot of analysis on the data set like you have probably noticed. We are quite happy about our findings and we are really proud of the final version of the recommendation engine. The recommendation engine is functioning quite well and we'll definitely be using it ourselves during the x-mas break when looking for movies to watch and we encourage you to try it out on the website.
         <br>
         <br>
-        Although it turned out great we tried quite a lot of different things before we were satisfied. For the network part we looked at three different networks. We created a network where movies were connected if they shared a certain percentage of their keywords. We did the same for genres as well as one network where nodes were cast members and nodes were linked if the cast members had starred together in a certain number of movies. After analyzing each of the networks we decided that none of them were good enough. This resulted in us creating a fourth network (can be seen above) which would combine the properties of the previous three. Movies were nodes and to create links to other movies we looked at multiple properties e.g. cast members, keywords, genres, directors and similarities in story line. After links have been created and we’re in the process of recommending we also look at IMDb ratings.
+        Although it turned out great we tried quite a lot of different things before we were satisfied. For the network part we looked at three different networks. We created a network where movies were connected if they shared a certain percentage of their keywords. We did the same for genres as well as one network where nodes were cast members and nodes were linked if the cast members had starred together in a certain number of movies. After analyzing each of the networks we decided that none of them were good enough. This resulted in us creating a fourth network (can be seen above) which would combine the properties of the previous three. Movies were nodes and to create edge to other movies we looked at multiple properties e.g. cast members, keywords, genres, directors and similarities in story line. After edges have been created and we’re in the process of recommending we also look at IMDb ratings.
         <br>
         <br>
         The text analysis itself went well but it ended up not being used in the recommendation engine except for the storylines of the movies. The reason for this was that the data we had for text analysis, ~14.000 reviews and ~1.000 movie scripts, only applied to a subset of our 4800 movies. We didn't want to make the number of movies that we could recommend less than it was at the beginning. We did a lot of text analysis and made a proof of concept that the data could’ve been used in the recommendation engine. This tells us that we could have further improved the engine by getting manuscripts and reviews for all our movies. If not the manuscripts then we could've perhaps gotten the subtitle texts for each movie and do the same analysis on those texts and used the information to further improve our engine.</p>
