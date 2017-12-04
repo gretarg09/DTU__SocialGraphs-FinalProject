@@ -305,10 +305,6 @@
          </p>
 
 
-        
-
-
-
           <div class="col-lg-6 text-center">
             <img class="img-fluid" src="img/genres.PNG" alt="">
           </div>
@@ -324,7 +320,9 @@
            <div class="col-lg-6 addMargin">
             <p class = "addMargin">The figure here on the side shows the correlation between variables in the Kaggle dataset.
               The correlation between the TMDb rating and the IMDb rating is interesting, there seems to be less positive correlation between these values than one would expect. This is most likely do to the fact that the TMDb rating is based on much less data, fewer votes on average, than the IMDb rating. Based on this information we decided to only use the IMDb ratings in further analysis of the dataset.
-            Interestingly we see that the budget and the revenue of a movie is highly correlated which means that if a movie has a high budget then the movie is more likely to get higher revenue in the end. Like everyone knows, you need to spend money to make money! The reader can look deeper into the figure to see how the variables in the dataset correlate. However, if the reader is lazy, we again highly recommend checking out the <span class="download">explanatory notebook</span> to be fed like a toddler with juicy code and explanations.
+            Interestingly we see that the budget and the revenue of a movie is highly correlated which means that if a movie has a high budget then the movie is more likely to get higher revenue in the end. Like everyone knows, you need to spend money to make money! The reader can look deeper into the figure to see how the variables in the dataset correlate. However, if the reader is lazy, we again highly recommend checking out the  <a href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+                  <span class="download">explanatory notebook</span>
+                </a> to be fed like a toddler with juicy code and explanations.
 </p>
           </div>
 
@@ -613,13 +611,21 @@ function carousel() {
 
 
 
-            <p>We are all huge movie fans and therefore we had a lot of fun doing this project. We did a lot of analysis on the data set like you have probably noticed. We are quite happy about our findings and we are really proud of the final version of the recommendation engine. The recommendation engine is functioning quite well and we'll definitely be using it ourselves during the x-mas break when looking for movies to watch and we encourage you to try it out on the website.
-            <br>
-            <br>
-            Although it turned out great we tried quite a lot of different things before we were satisfied. For the network part we looked at three different networks. We created a network where movies were connected if they shared a certain percentage of their keywords. We did the same for genres as well as one network where nodes were cast members and nodes were linked if the cast members had starred together in a certain number of movies. After analyzing each of the networks we decided that none of them were good enough. This resulted in us creating a fourth network (can be seen above) which would combine the properties of the previous three. Movies were nodes and to create edge to other movies we looked at multiple properties e.g. cast members, keywords, genres, directors and similarities in story line. After edges have been created and we’re in the process of recommending we also look at IMDb ratings.
-            <br>
-            <br>
-            The text analysis itself went well but it ended up not being used in the recommendation engine except for the storylines of the movies. The reason for this was that the data we had for text analysis, ~14.000 reviews and ~1.000 movie scripts, only applied to a subset of our 4800 movies. We didn't want to make the number of movies that we could recommend less than it was at the beginning. We did a lot of text analysis and made a proof of concept that the data could’ve been used in the recommendation engine. This tells us that we could have further improved the engine by getting manuscripts and reviews for all our movies. If not the manuscripts then we could've perhaps gotten the subtitle texts for each movie and do the same analysis on those texts and used the information to further improve our engine.</p>
+            <p>
+            We have discussed how we created a network that links similar movies together. Now the question is, how did we use this to get recommendation for each movie? After having created the network the process of recommending movie can be split up into three parts. 
+
+            <ul>
+                <li>Firstly, we calculated the shortest path from all movies to all other movies in the network. To accomplish this we used Djikstra shortest path: The algorithm creates a tree of shortest paths from the starting vertex, the source, to all other points in the graph.</li>
+                <li>Secondly, we used IMDb rating to shorten the distances. This will yield a shorter distance to movies which have higher IMDb rating. This should improve our search engine, since most people want to see highly rated movies rather than bad ones.</li>
+                <li>Last but not least, we needed to handle the fact that some movies (nodes) do not have any links. However, we still want to recommend movies when people like to find similar movies to them.  In this case we depend only on the IMDb rating and the similarity between the movies' storylines. Thus we will only recommend a movie which should be somewhat similar and has a good IMDb rating.   </li>
+            </ul>
+
+            There you have it, after having executed these steps we have created a recommendation engine that works quite will in our opinion. You can try it out for yourself in the following section. If you want to dig deeper into the analysis and the code behind the engine you can check out our 
+            <a class = "makeWhite" href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+                  <span class="download">explanatory notebook.</span>
+                </a>
+
+            </p>
 
 
             </div>
