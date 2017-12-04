@@ -324,20 +324,29 @@ function carousel() {
       <div class="container text-center">
         <h2 class="mb-4">Text Analysis</h2>
         <hr class="my-4">
-        <p>The initial idea was to find manuscripts for most of the 5000 movies that we have information about from the Kaggle dataset. We then intended to analyse these manuscripts and calculate similarities between movies and calculate sentiment score for each movie. We then wanted to use the information as two variables in our recommendation engine</p>
+        <div class="row">
+        
+        <p>The initial idea was to find manuscripts for all of the 5000 movies from the Kaggle dataset. Then analyze these manuscripts and calculate both similarities between movies and sentiment score for each movie. This information could then be fed to the recommendation engine as two variables. This would help the engine distinguish between happy and sad movies. Furthermore, the similarity measure could help the recommendation engine to find movies with similar languages. </p>
 
 
            <div class="col-lg-6 text-center">
-            <img class="img-fluid" src="img/sentimentAnalysisgenrebox.PNG" alt="">
+            <img class="img-fluid" src="img/manuscriptBox.PNG" alt="">
           </div>
 
            <div class="col-lg-6 text-center">
             <img class="img-fluid" src="img/sentimentAnalysisGenredata.PNG" alt="">
           </div>
 
+          <br>
+          <p>Note: We do not have equal amount of manuscripts for each genre, therefore the result cannot be taken as the whole truth but this still gives us a good idea of the behavior.
+The genres Music, Romance, Comedy, Drama and Family are the 5 genres with the highest average of the mean sentiment values like one could have expected. These genres of movies seem to have the happiest manuscripts on average based on the LabMT wordlist.
+Similarly it is easy to understand why War, Western, Action and Horror movies have low mean sentiment values on average. Movies within these genres are often about the dark sides of life and therefore the moviescripts contain a lot of words that we human consider unhappy words. Words like war, guns, fights and so on.
+The genres History, Drama, Comedy and Fantasy seem to have the most variance of the mean happyness value of the manuscripts. This shows us that these genres have diverse movies within the genre, meaning that some of the movies within the genre are considered to be sad or unhappy while other movies in the same genre are considered happy. It is trivial to agree with these findings. Let's take the History genre for example; one history movie can be about war which would be considered something sad and then there could be another history movie in the database that is about how love has changed over the years, that movie would be consider to be quite positive or happy.
+The movies Family and Western have the least variance within the average of the mean sentiment values. This is also something that we can easily agree with. Movies that are classified as family movies are most often about something that is happy, something that the whole family can watch together and are so called "feel good movies". There are not many family movies that are about something dark and unhappy and Therefore the median and the mean sentiment value is quite high for these types of movies and the variance of the mean value is low. In contrast, western movies are nearly all about something dark; fights, war, robbery or life struggle. There are few happy western movies out there, at least we haven't seen a single one in our life.
+The genre Science Fiction contains the least average variance within the sentiment values of each manuscript. This came as a surprise to us. The vocabulary used in the Science Fiction's manuscripts does not vary as much between very happy words and very unhappy words like the for the other genres.
+The genres with the highest average variance within the vocabulary of the manuscripts is Music, Romance, Comedy, Fantasy and Western. The first three genres are understandable because one can expect movies of these genres to have vocabulary that varies quite alot between happy and sad words but the genre Western caught our attention. The vocabulary used in the western movies seems to be diverse which we did not expect in the beginning but when you think about it these movies often contain some romantic stories within the storyline and therefore most often contain some amount of words that are considered to be happy.</p>
 
-
-
+        </div>
 
       </div>
     </section>
