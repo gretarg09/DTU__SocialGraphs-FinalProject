@@ -57,10 +57,13 @@
               <a class="nav-link js-scroll-trigger" href="#Networks">Networks</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#HowWeRecommend">How we recommend</a>
+              <a class="nav-link js-scroll-trigger" href="#HowWeRecommend">Recomending</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#searcher">The engine</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#Conclusion">Conclusion</a>
             </li>
           </ul>
         </div>
@@ -555,8 +558,9 @@ function carousel() {
           </div>  
 
           <div class="col-lg-6">
-             <h4 class="mb-4">Information about the network</h4><p>We can see from the images below that this network looks good. The degree distribution follows a power law, which tells us that this is a scale-free network. 
-             Therefore it can be seen that there are hubs in this network meaning that there are small number of movies that are very similar to many other movies but the vast amount of the movies have low degree value which means that they only link to few other movies. So this indicates that there are some movie´s in the network, which will more frequently be recommended than others. Furthermore, these hubs may possably link other movies together as many movies travel trough them.  Deciding which properties and their weight to us took some time and was mostly fine-tuned through trial-and-error. We tested it on 'Iron Man 2' and the 5 most similar movies according to the network were: 'Iron Man', 'Iron Man 3', 'Captain America: Civil War', 'Zathura: A Space Adventure' and 'Avengers: Age Of Ultron'. Only movie that kinda stood out there in our eyes was 'Zathura' but it turns out that, among other things, it is directed by the same director as 'Iron Man 2'.</p> 
+             <h4 class="mb-4">Information about the network</h4><p>We can see from the images below that this network looks good. The degree distribution follows a power law, which tells us that this is a scale-free network. This indicates that there are few hubs in this network. This translates to the fact that there are small number of movies that are very similar to many other movies and therefore have many links. However, most movies are only similar to few movies making them only link to few other movies. This results in the fact that there are few movies which will more frequently be recommended than others. Furthermore, these hubs may possibly link other movies together as many movies travel through them.</p>
+             <p>
+               The network was test on 'Iron Man 2' to inspect how well it was doing. After some attempts on trail and error, adjusting the important coefficients and selecting right properties to use, we finally arrived at a good solution. the 5 most similar movies according to the network were: 'Iron Man', 'Iron Man 3', 'Captain America: Civil War', 'Zathura: A Space Adventure' and 'Avengers: Age Of Ultron'. Only movie that kind of stood out there in our eyes was 'Zathura' but it turns out that, among other things, it is directed by the same director as 'Iron Man 2'.</p> 
              <h4 class="mb-4">The network in numbers:</h4>
              <ul class="list-group">
                 <li class="list-group-item">Size: 4.794 nodes and 71.718 edges</li>
@@ -633,7 +637,7 @@ function carousel() {
         
             <p> Insert a movie that you like and we will find similar movies for you. If you either do not like any of the recommendation or if you have seen any of these movies then you can always delete the movie from the list and we will find another movie for you</p>  
           </div>
-              <div class="search" style="margin:4%">
+              <div class="search" style="margin-bottom:14%">
               
                 <input type="text" name="inputBox" placeholder="enter movie title here" id="term" />
               
