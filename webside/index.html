@@ -57,10 +57,10 @@
               <a class="nav-link js-scroll-trigger" href="#Networks">Networks</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#Conclusion">Conclusion</a>
+              <a class="nav-link js-scroll-trigger" href="#HowWeRecommend">How we recommend</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#searcher">Recommendation engine</a>
+              <a class="nav-link js-scroll-trigger" href="#searcher">The engine</a>
             </li>
           </ul>
         </div>
@@ -597,30 +597,43 @@ function carousel() {
   </section>
 
 
- <section class="bg-dark text-white" id = "Conclusion">
+    <section class="bg-dark text-white" id = "HowWeRecommend">
       <div class="container text-center">
-        <h2 class="mb-4">Conclusion</h2>
+        <h2 class="mb-4">How we recommend</h2>
         <hr class="my-4">
-        <p>We are all huge movie fans and therefore we had a lot of fun doing this project. We did a lot of analysis on the data set like you have probably noticed. We are quite happy about our findings and we are really proud of the final version of the recommendation engine. The recommendation engine is functioning quite well and we'll definitely be using it ourselves during the x-mas break when looking for movies to watch and we encourage you to try it out on the website.
-        <br>
-        <br>
-        Although it turned out great we tried quite a lot of different things before we were satisfied. For the network part we looked at three different networks. We created a network where movies were connected if they shared a certain percentage of their keywords. We did the same for genres as well as one network where nodes were cast members and nodes were linked if the cast members had starred together in a certain number of movies. After analyzing each of the networks we decided that none of them were good enough. This resulted in us creating a fourth network (can be seen above) which would combine the properties of the previous three. Movies were nodes and to create edge to other movies we looked at multiple properties e.g. cast members, keywords, genres, directors and similarities in story line. After edges have been created and we’re in the process of recommending we also look at IMDb ratings.
-        <br>
-        <br>
-        The text analysis itself went well but it ended up not being used in the recommendation engine except for the storylines of the movies. The reason for this was that the data we had for text analysis, ~14.000 reviews and ~1.000 movie scripts, only applied to a subset of our 4800 movies. We didn't want to make the number of movies that we could recommend less than it was at the beginning. We did a lot of text analysis and made a proof of concept that the data could’ve been used in the recommendation engine. This tells us that we could have further improved the engine by getting manuscripts and reviews for all our movies. If not the manuscripts then we could've perhaps gotten the subtitle texts for each movie and do the same analysis on those texts and used the information to further improve our engine.</p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
 
 
 
+            <p>We are all huge movie fans and therefore we had a lot of fun doing this project. We did a lot of analysis on the data set like you have probably noticed. We are quite happy about our findings and we are really proud of the final version of the recommendation engine. The recommendation engine is functioning quite well and we'll definitely be using it ourselves during the x-mas break when looking for movies to watch and we encourage you to try it out on the website.
+            <br>
+            <br>
+            Although it turned out great we tried quite a lot of different things before we were satisfied. For the network part we looked at three different networks. We created a network where movies were connected if they shared a certain percentage of their keywords. We did the same for genres as well as one network where nodes were cast members and nodes were linked if the cast members had starred together in a certain number of movies. After analyzing each of the networks we decided that none of them were good enough. This resulted in us creating a fourth network (can be seen above) which would combine the properties of the previous three. Movies were nodes and to create edge to other movies we looked at multiple properties e.g. cast members, keywords, genres, directors and similarities in story line. After edges have been created and we’re in the process of recommending we also look at IMDb ratings.
+            <br>
+            <br>
+            The text analysis itself went well but it ended up not being used in the recommendation engine except for the storylines of the movies. The reason for this was that the data we had for text analysis, ~14.000 reviews and ~1.000 movie scripts, only applied to a subset of our 4800 movies. We didn't want to make the number of movies that we could recommend less than it was at the beginning. We did a lot of text analysis and made a proof of concept that the data could’ve been used in the recommendation engine. This tells us that we could have further improved the engine by getting manuscripts and reviews for all our movies. If not the manuscripts then we could've perhaps gotten the subtitle texts for each movie and do the same analysis on those texts and used the information to further improve our engine.</p>
+
+
+            </div>
+        </div>
 
       </div>
     </section>
 
  <section id="searcher">
-      <div class=" text-center">
+      <div class=" text-center text-center">
         
-            <h2 class="section-heading">The Recommendation engine</h2>
-            <hr class="my-4">
-              <div class="search">
+        <div class="container text-center">
+          <h2 class="mb-4">The Recommendation engine</h2>
+          <hr class="my-4">
+        
+            <p> Insert a movie that you like and we will find similar movies for you. If you either do not like any of the recommendation or if you have seen any of these movies then you can always delete the movie from the list and we will find another movie for you</p>  
+          </div>
+              <div class="search" style="margin:4%">
               
                 <input type="text" name="inputBox" placeholder="enter movie title here" id="term" />
               
@@ -628,39 +641,64 @@ function carousel() {
 
 
                 <div id="poster"></div>
-        <div id="buttons"></div>
+          <div id="buttons"></div>
 
-    </div>
+            </div>
          
       </div>
     </section>
 
 
+    <section class="bg-dark text-white" id = "Conclusion">
+      <div class="container text-center">
+        <h2 class="mb-4">Conclusion</h2>
+        <hr class="my-4">
+      </div>
 
-
-
-    <section id="contact">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">IngvarBjarki@startbootstrap.com</a>
+          <div class="col-lg-12">
+
+
+
+            <p>We are all huge movie fans and therefore we had a lot of fun doing this project. We did a lot of analysis on the data set which can be found in the explainer notebook. We are quite happy about our findings and we are really proud of the final version of the recommendation engine. The recommendation engine is functioning quite well and we'll definitely be using it ourselves during the x-mas break when looking for movies to watch and we encourage you to try it out on the website.
+            <br>
+            <br>
+            Although it turned out great we tried quite a lot of different things before we were satisfied. For the network part we looked at three different networks. We created a network where movies were connected if they shared a certain percentage of their keywords. We did the same for genres as well as one network where nodes were cast members and nodes were linked if the cast members had starred together in a certain number of movies. After analyzing each of the networks we decided that none of them were good enough. This resulted in us creating a fourth network (can be seen above) which would combine the properties of the previous three. Movies were nodes and to create edge to other movies we looked at multiple properties e.g. cast members, keywords, genres, directors and similarities in story line. After edges have been created and we’re in the process of recommending we also look at IMDb ratings.
+            <br>
+            <br>
+            The text analysis itself went well but it ended up not being used in the recommendation engine except for the storylines of the movies. The reason for this was that the data we had for text analysis, ~14.000 reviews and ~1.000 movie scripts, only applied to a subset of our 4800 movies. We didn't want to make the number of movies that we could recommend less than it was at the beginning. We did a lot of text analysis and made a proof of concept that the data could’ve been used in the recommendation engine. This tells us that we could have further improved the engine by getting manuscripts and reviews for all our movies. If not the manuscripts then we could've perhaps gotten the subtitle texts for each movie and do the same analysis on those texts and used the information to further improve our engine.
+            <br>
+            <br>
+
+             Like we mentioned in the beginning, the analysis showed here are only subset of the analysis that we did. Therefore we encourage a enthusiastic reader to check out our Explainer Notebook which contains all of the code behind the analysis as well as much more detailed describtions of our methods and analysis.
+
             </p>
-          </div>
+
+
+            </div>
         </div>
+
       </div>
+
+
+      <div class="col-lg-3 col-sm-10 mx-auto text-center">
+      <div class="row">
+
+                   <div title="View the explanier notebook" class="col-lg-6 col-sm-10 mx-auto text-center">
+                     <a href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+                     <a class = "makeWhite" href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+                        <h3 class ="download">Notebook </h3>
+                     </a>
+                  </div>
+                <div title="Download the Datasets" class="col-lg-6 col-sm-10 mx-auto text-center">
+                  <a href="https://www.dropbox.com/sh/uw5uw9n6gtfpii0/AAB5UGCmpe6XqpOqPdVUxPLda?dl=0">
+                  <a class = "makeWhite" href="https://www.dropbox.com/sh/uw5uw9n6gtfpii0/AAB5UGCmpe6XqpOqPdVUxPLda?dl=0">
+                    <h3 class ="download">Datasets</h3>
+                  </a>
+                </div>      
+      </div>  
+
     </section>
 
 
