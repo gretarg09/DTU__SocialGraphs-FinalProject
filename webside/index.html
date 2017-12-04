@@ -150,29 +150,44 @@
 
           <div class="col-lg-6">
              <h4 class="mb-4"> Additional gathered datasets </h4>
-               <p>
-                This was the central dataset in our analysis. This dataset fulfilled our requirements. It contain a vast amount of data and all of the information is gather From the site TMDb.com (The Movie Database). The dataset can be found and downloaded from this <a class = "makeWhite" href="https://www.kaggle.com/tmdb/tmdb-movie-metadata"> 
-                                            <span class="download">here.</span> 
-                                        </a>
-               </p> 
 
-            <h5 class="mb-4">Most important attributes</h5>
-              <p>  The dataset contains 22 attributes, they are not all equally important for our analysis and therefore we will only considert a subset of them here, more detailed information can be found in the explainer notebook </p>
+            <h5 class="mb-4"> User rating and storylines from IMDb </h5>
+              <p>   The Kaggle database contains ratings and storylines (called overview in the TMDb dataset) from TMDb but we also wanted to look at user ratings and the storylines from IMDb (Internet Movie Database) as the ratings have much more votes and thus are more realistic.  By scraping the IMDb website we manage to gather information for all movies in our Kaggle database except five</p>
 
              <ul>
-                <li><strong> Title </strong> : the name of the movie </li>
-                <li><strong>Crew</strong> : info about the crew members of the movie</li>
-                <li><strong>Cast</strong> : info about the cast member of the movie</li>
-                <li><strong>Genres</strong> : there are 17 movie genres in this dataset</li>
-                <li><strong>Production companies</strong> : the company/companies that produced the movie</li>
-                <li><strong>Release date</strong>: the date when the movie was released</li>
-                <li><strong>Runtime</strong> : the total length of the movie</li>
-                <li><strong>Vote count</strong> : how many users rated the movie on the TMDb website</li>
-                <li><strong>Vote average</strong> : the average rating that the movie got on the TMDb website</li>
-                <li><strong>Revenue</strong> : The total earnings of the movie</li>
-                <li><strong>Budget</strong> : The amount spent on making the movie</li>
-                <li><strong>keywords</strong> : Set of words that is explanatory of the movie</li>
+                <li><strong> imdb-score.json </strong> : This file contains the IMDb rating of the movies in our Kaggle dataset. The size of the file is 85 KB </li>
+                <li><strong>imdb-storyline.json</strong> : This file contains the IMDb storyline of the movies in our Kaggle dataset. The size of the file is 2.8 MB</li>
+            </ul>
+
+            <h5 class="mb-4"> Manuscripts </h5>
+              <p>  The website 
+
+              <a class = "makeWhite" href="http://www.imsdb.com/"> 
+                                            <span class="download">The Internet Movie Script Database (IMSDb) </span> 
+              </a>
+
+              had the most comprehensive database of manuscripts that we could find. Unfortunately they are not offering the possibility of downloading the scripts, however we manage to download the manuscripts by scraping the IMSDb website </p>
+
+            <ul>
+                <li><strong> scripts </strong> : This folder contains 1116 manuscripts and the intersection with our Kaggle dataset is 715 manuscripts. Therefore we only managed to find manuscripts for 715 movies out of the 4800 movies that we have in our dataset. The size of the dataset is 232,6 MB
+               </li>
+            </ul>
+
+
+
+
+            <h5 class="mb-4"> User reviews </h5>
+              <p>   </p>
+
+             <ul>
+                <li><strong> imdb-score.json </strong> : This file contains the IMDb rating of the movies in our Kaggle dataset. The size of the file is 85 KB </li>
+                <li><strong>imdb-storyline.json</strong> : This file contains the IMDb storyline of the movies in our Kaggle dataset. The size of the file is 2.8 MB</li>
               </ul>
+
+
+
+
+
           </div> 
 
 
