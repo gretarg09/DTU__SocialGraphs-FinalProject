@@ -552,14 +552,16 @@ function carousel() {
 
           <div class="col-lg-6">
               <h4 class="mb-4">Constructing the network</h4><p>
-              When making the network various decisions regarding what constraints needed to be fulfilled to make an edge and what the weight of that edge should be. We start the discussion on the constraints. The constraints build upon four dimensions: genre, keywords, actors and director. All of these things are calculated in a similar fashion. We find all the common things in both movies, by their; genres, keywords, actors and directors and then we normalize it by dividing by the movie which has less items in each dimension. Each of these values are then multiplied by an importance coefficient, and if the total sum of the scaled dimension variables is more than 0.3 (a arbitrary threshold) we make an edge.  The value of the importance was chosen by guesswork and trial-and-error. Since there is no correct answer to which movies you recommend we tweaked it until we were happy with the results generated. However, there were some things we kept in mind though. As we now have only normalized variables, we can select importance coefficients so that the total sum of the scaled dimension variable can have at maximum the value of 1. Furthermore, we keep in mind that none of the importance coefficients can excite 0.3, that way we force our network to only make connection if at least two dimension variables are active. Now we need to assign a weight to the network to decide how close the nodes should be in the network. Here, we assign a weight to the edge by subtract both the sum of the scaled dimension variables which satisfied the constraint and the similarities between the movies with some arbitrary positive number (keep in mind that when calculating the shortest path with Dijkstra all weights must be positive). This way, movies that have similar keywords, genre, actors, directors and storylines are closer in the network. Note that we use the similarity between storylines only in deciding on the weight of the edge. The reason for this is that although the movies might have similar storylines the movies could be very different. For example, a romance and a horror story might connect, depending on the language used in the storyline on IMDb. To conclude, when the network recommends movie, it first calculate the movies within the shortest distance from the selected movie, after that the IMDb rating is added to the mix, in order to recommend rather good movies then bad ones. For further info we recommend looking at the   <a class = "makeBlack" href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
+              When making the network various decisions regarding what constraints needed to be fulfilled to make an edge and what the weight of that edge should be. We start the discussion on the constraints. The constraints build upon four dimensions: genre, keywords, actors and director. All of these things are calculated in a similar fashion. We find all the common things in both movies, by their; genres, keywords, actors and directors and then we normalize it by dividing by the movie which has less items in each dimension. Each of these values are then multiplied by an importance coefficient, and if the total sum of the scaled dimension variables is more than 0.3 (a arbitrary threshold) we make an edge.  The value of the importance was chosen by guesswork and trial-and-error. Since there is no correct answer to which movies you recommend we tweaked it until we were happy with the results generated. However, there were some things we kept in mind though. As we now have only normalized variables, we can select importance coefficients so that the total sum of the scaled dimension variable can have at maximum the value of 1. Furthermore, we keep in mind that none of the importance coefficients can excite 0.3, that way we force our network to only make connection if at least two dimension variables are active. 
+              <br>
+              Now we need to assign a weight to the network to decide how close the nodes should be in the network. Here, we assign a weight to the edge by subtract both the sum of the scaled dimension variables which satisfied the constraint and the similarities between the movies with some arbitrary positive number (keep in mind that when calculating the shortest path with Dijkstra all weights must be positive). This way, movies that have similar keywords, genre, actors, directors and storylines are closer in the network. Note that we use the similarity between storylines only in deciding on the weight of the edge. The reason for this is that although the movies might have similar storylines the movies could be very different. For example, a romance and a horror story might connect, depending on the language used in the storyline on IMDb. For further info we recommend looking at the   <a class = "makeBlack" href="https://github.com/gretarg09/Dtu-SocialGraphs-FinalProject/blob/master/Notebooks/explainer_notebook.ipynb">
                   <span class="download">Explainer notebook</span> 
                 </a>.</p>
 
           </div>  
 
           <div class="col-lg-6">
-             <h4 class="mb-4">Information about the network</h4><p>We can see from the images below that this network looks good. The degree distribution follows a power law, which tells us that this is a scale-free network. This indicates that there are few hubs in this network. This translates to the fact that there are small number of movies that are very similar to many other movies and therefore have many links. However, most movies are only similar to few movies making them only link to few other movies. This results in the fact that there are few movies which will more frequently be recommended than others. Furthermore, these hubs may possibly link other movies together as many movies travel through them.</p>
+             <h4 class="mb-4">Information about the network</h4><p>We can see from the images that the degree distribution follows a power law, which tells us that this is a scale-free network. This indicates that there are few hubs in this network. This translates to the fact that there are small number of movies that are very similar to many other movies and therefore have many links. However, most movies are only similar to few movies making them only link to few other movies. This results in the fact that there are few movies which will more frequently be recommended than others. Furthermore, these hubs may possibly link other movies together as many movies travel through them.</p>
              <p>
                The network was test on 'Iron Man 2' to inspect how well it was doing. After some attempts on trail and error, adjusting the important coefficients and selecting right properties to use, we finally arrived at a good solution. the 5 most similar movies according to the network were: 'Iron Man', 'Iron Man 3', 'Captain America: Civil War', 'Zathura: A Space Adventure' and 'Avengers: Age Of Ultron'. Only movie that kind of stood out there in our eyes was 'Zathura' but it turns out that, among other things, it is directed by the same director as 'Iron Man 2'.</p> 
              <h4 class="mb-4">The network in numbers:</h4>
@@ -571,15 +573,6 @@ function carousel() {
                 <li class="list-group-item">The median and mean degree is 13 and ~30 respectively</li>
               </ul>
           </div> 
-
-          <div class="col-lg-6 text-center">
-            <img class="img-fluid" src="img/main_network_communities_giant.PNG" alt="">
-          </div>
-
-          <div class="col-lg-6 text-center">
-            <img class="img-fluid" src="img/main_network1.PNG" alt="">
-          </div>
-
           
           <div class="col-lg-6 text-center">
             <img class="img-fluid" src="img/degreeLinear.PNG" alt="">
@@ -589,8 +582,30 @@ function carousel() {
             <img class="img-fluid" src="img/degreeLog.PNG" alt="">
           </div>
 
+          <div class="col-lg-12 text-center">
+            <img class="img-fluid" src="img/main_network1.PNG" alt="">
+          </div>
 
 
+
+          <div class="col-lg-12">
+              <h4 class="mb-4">Communities in the network</h4>
+              <p>
+                  To identify communities in this network we used the Louvain community detection algorithm which identifies communities in a network. The communities are then movies that are all closely connected with each other but not as much to movies in other communities. We ran the algorithm on the giant component of our network. 
+
+              </p>
+          </div>  
+
+
+
+          <div class="col-lg-12 text-center">
+            <img class="img-fluid" src="img/main_network_communities_giant.PNG" alt="">
+          </div>
+
+
+          <div class="col-lg-12 text-center">
+            <img class="img-fluid" src="img/communities.PNG" alt="">
+          </div>
 
           <!-- now that we have used up all the 12 coloumbs in this row , lets go create a new "row class" , Alas in the same container -->
       </div>  <!-- end of row -->
