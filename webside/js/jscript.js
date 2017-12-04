@@ -237,25 +237,25 @@ function searcher(){
 
 // Bubbi seigir: nota google search apa
 function goToNetflix() {
-    alert('wanna go to netflix')
+    alert('are you sure you wann go to Netflix?')
 
     window.location.href = "http://www.netflix.com/Search?lnkctr=srchrd-ips&v1=" + encodeURIComponent(selected_movie);
 }
 
 function goToIMDB() {
-    alert('Sure you wann go to IMDB')
+    alert('are you sure you wann go to IMDb?')
 
     window.location.href = "http://www.imdb.com/find?s=tt&q=" + encodeURIComponent(selected_movie);
 }
 
 function goToAmazon() {
-    alert('are you afried of the amazon, das jubngle')
+    alert('are you sure you want to go to the jungle?')
 
     window.location.href = "http://www.amazon.com/s/ref=nb_ss_d?tag=chriscoyier-20&url=search-alias%3Ddvd&field-keywords=" + encodeURIComponent(selected_movie);
 }
 
 function goToGoogle() {
-    alert('Sure you wann go to Google')
+    alert('are you sure you wann Google it?')
 
     window.location.href = "https://www.google.com/#q=" + encodeURIComponent(selected_movie);
 }
