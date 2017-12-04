@@ -90,15 +90,18 @@
     <section class="col-lg-12 col-sm-12 bg-dark text-white" id="about">
       <div class="container">
         <div class="row">
-          <div class="col-lg-10 col-sm-10 mx-auto text-center">
+          <div class="col-lg-10 col-sm-10 mx-auto ">
+            <div class="text-center">
             <h2 class="section-heading">About the project</h2>
             <hr class="my-4">
+          </div>
             <p class=" mb-4"> How many times have you been searching Netflix, Hulu, HBO, IMDb or other similar web services for a good movie to watch? How many times have you thought to yourself, 'Darn it! I just want to watch a movie like Moneyball, what a great movie!' or, 'I really liked Shawshank Redemption where can I find something similar?' If you have experienced this horrible life experience, of either searching for a movie and not finding any, or just wanting to see something similar to your favorite movie. We're here for you! We've created the solution, the last recommendation engine you'll need! The engine uses both text analysis and network theory to predict what movies you want to see based on what movies you like. By scrolling to the bottom of this webpage, or, by simply clicking <a class = "makeWhite" href="#searcher"><span class="download"> here</span></a> you can access the recommendation engine immediately. However, if you are interested in reading about how the engine works, you can simply scroll downwards this website, where all the relevant info will be covered.
             </p>
 
       
-
-              <h4 class="section-heading">The dataset</h4>
+              <div class="text-center">
+                <h4 class="section-heading">The dataset</h4>
+            </div>
 
               <p>
                 In order to make the recommendation engine, we needed to gather information about a loads of movie's. Furthermore, multiple datasets where needed to build the recommendation engine, as all of them included some unique useful elements to build the engine. Firstly, a dataset from Kaggle was used. The dataset isn’t quite big, around 50 mb, but it contains a lot of information. It includes close to 20 properties for around 5000 movies. Next, as we wanted to make use of text analysis the storyline from IMDb was scraped for all the movies in the Kaggle dataset. In addition to that the IMDb rating for each movie in the Kaggle dataset was also scraped. Lastly, a ton of movie scripts and reviews for each movie in the dataset where found. The idea was to use sentiment analysis and similarity measures on these texts, to figure out if a movie is happy/sad or similar to some other movie. All the datasets can be found and downloaded 
