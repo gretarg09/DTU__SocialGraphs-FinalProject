@@ -38,7 +38,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Back to begning</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Back to beginning</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -98,7 +98,7 @@
               <h4 class="section-heading">The dataset</h4>
 
               <p>
-                In order to make the recommendation engine, we needed to gather information about a loads of movie's. Furthermore, multiple datasets where needed to build the recommendation engine, as all of them included some unique useful elements to build the engine. Firstly, a dataset from Kaggle was used. The dataset isn’t quite big, around 50 mb, but it contains a lot of information. It includes close to 20 properties for around 5000 movies. Next, as we wanted to make use of text analysis the storyline from IMDb was scraped for all the movies in the Kaggle dataset. In addition to that the IMDb rating for each movie in the Kaggle dataset was also scraped. Lastly, a ton of movie scripts and reviews for each movie in the dataset where found. The idea was to use sentiment analysis and similarity measures on these texts, to figure out if a movie is happy or similar to some other movie. All the datasets can be found and downloaded 
+                In order to make the recommendation engine, we needed to gather information about a loads of movie's. Furthermore, multiple datasets where needed to build the recommendation engine, as all of them included some unique useful elements to build the engine. Firstly, a dataset from Kaggle was used. The dataset isn’t quite big, around 50 mb, but it contains a lot of information. It includes close to 20 properties for around 5000 movies. Next, as we wanted to make use of text analysis the storyline from IMDb was scraped for all the movies in the Kaggle dataset. In addition to that the IMDb rating for each movie in the Kaggle dataset was also scraped. Lastly, a ton of movie scripts and reviews for each movie in the dataset where found. The idea was to use sentiment analysis and similarity measures on these texts, to figure out if a movie is happy/sad or similar to some other movie. All the datasets can be found and downloaded 
                  <a class = "makeWhite" href="https://www.dropbox.com/sh/uw5uw9n6gtfpii0/AAB5UGCmpe6XqpOqPdVUxPLda?dl=0"> 
                   <span class="download">here.</span> 
                  </a>
@@ -115,13 +115,19 @@
           <div class="col-lg-6 addMargin">
              <h4 class="mb-4"> TMDb 5000 Movie dataset </h4>
                <p>
-                This was the central dataset in our analysis. This dataset fulfilled our requirements. It contain a vast amount of data and all of the information is gather From the site TMDb.com (The Movie Database). The dataset can be found and downloaded from this <a class = "makeWhite" href="https://www.kaggle.com/tmdb/tmdb-movie-metadata"> 
+                This was the central dataset in our analysis. This dataset fulfilled our requirements. It contains a vast amount of data and all of the information is gather From the website 
+
+                <a class = "makeWhite" href="https://www.themoviedb.org/"> 
+                    <span class="download">TMDb</span> 
+                 </a>
+
+                (The Movie Database). The dataset can be found and downloaded from this <a class = "makeWhite" href="https://www.kaggle.com/tmdb/tmdb-movie-metadata"> 
                                             <span class="download">website.</span> 
                                         </a>
                </p> 
 
             <h5 class="mb-4">Most important attributes</h5>
-              <p>  The dataset contains 22 attributes, they are not all equally important for our analysis and therefore we will only considert a subset of them here, more detailed information can be found in the explainer notebook </p>
+              <p>  The dataset contains 22 attributes, they are not all equally important for our analysis and therefore we will only consider a subset of them here, more detailed information can be found in the explainer notebook. </p>
 
              <ul>
                 <li><strong> Title </strong> : the name of the movie </li>
@@ -153,7 +159,13 @@
              <h4 class="mb-4"> Additional gathered datasets </h4>
 
             <h5 class="mb-4"> User rating and storylines from IMDb </h5>
-              <p>   The Kaggle database contains ratings and storylines (called overview in the TMDb dataset) from TMDb but we also wanted to look at user ratings and the storylines from IMDb (Internet Movie Database) as the ratings have much more votes and thus are more realistic.  By scraping the IMDb website we manage to gather information for all movies in our Kaggle database except five</p>
+              <p>   The Kaggle database contains ratings and storylines (called overview in the TMDb dataset) from TMDb but we also wanted to look at user ratings and the storylines from 
+            
+                 <a class = "makeWhite" href="http://www.imdb.com/"> 
+                  <span class="download">IMDb</span> 
+                 </a>
+
+               (Internet Movie Database) as the ratings have much more votes and thus are more realistic.  By scraping the IMDb website we manage to gather information for all movies in our Kaggle database except five</p>
 
              <ul>
                   <li> 
@@ -280,7 +292,7 @@
           </div>
 
           <p class = "addMargin">
-           Finally, we look at how the distribution of the genre is in the movies. We see that there is a huge class imbalance in our dataset, there are so many 'Drama' movies and so few 'TV Movies'. This is a problem we need to be aware of. The figure here show the count of movies associated with each genre (movies can have multiple genres). 
+           Finally, we look at how the distribution of the genre is in the movies. We see that there is a huge class imbalance in our dataset, there are so many 'Drama' movies and so few 'War Movies'. This is a problem we need to be aware of. The figure here show the count of movies associated with each genre (movies can have multiple genres). 
 
            Next, we look at the popularity of keywords associated with each movie. Every movie in the Kaggle dataset has a bunch of keywords associated to them. These words are supposed to describe the movie. It is interesting to see that 'women director' is the most common keyword. It seems to be quite important to illustrate the fact that it was actually a woman that directed the movie. This again (we have seen this multiple times in the analysis) shows how male dominant this industry is. The fact that a woman directs the movie seems to be considered as a special feature of the movie and the movie producers think that it is important to illustrate that fact by having it as a keyword of the movie.
           Everything else seems to be like one could expect. The cities 'New York', 'Los Angeles' and 'London' are also highly used keywords which illustrates the fact that most movies are supposed to occur in these cities.
@@ -307,7 +319,7 @@
           </div>
 
            <div class="col-lg-6 text-center addMargin">
-            <p class = "addMargin">The figure here on the side shows the correlation between all the variables in the Kaggle dataset.
+            <p class = "addMargin">The figure here on the side shows the correlation between variables in the Kaggle dataset.
               The correlation between the TMDb rating and the IMDb rating is interesting, there seems to be less positive correlation between these values than one would expect. This is most likely do to the fact that the TMDb rating is based on much less data, fewer votes on average, than the IMDb rating. Based on this information we decided to only use the IMDb ratings in further analysis of the dataset.
             Interestingly we see that the budget and the revenue of a movie is highly correlated which means that if a movie has a high budget then the movie is more likely to get higher revenue in the end. Like everyone knows, you need to spend money to make money! The reader can look deeper into the figure to see how the variables in the dataset correlate. However, if the reader is lazy, we again highly recommend checking out the <span class="download">explanatory notebook</span> to be fed like a toddler with juicy code and explanations.
 </p>
@@ -414,14 +426,18 @@ function carousel() {
         <hr class="my-4">
         <div class="row">
         
-        <p>The initial idea was to find manuscripts for all of the 5000 movies from the Kaggle dataset. Then analyze these manuscripts and calculate both similarities between movies and sentiment score for each movie. This information could then be fed to the recommendation engine as two variables. This would help the engine distinguish between happy and sad movies. Furthermore, the similarity measure could help the recommendation engine to find movies with similar languages. </p>
+        <p>The initial idea was to find manuscripts for all of the 5000 movies from the Kaggle dataset. Then analyze these manuscripts and calculate both similarities between movies and sentiment score for each movie. This information could then be fed to the recommendation engine as two variables. This would help the engine distinguish between happy and sad movies. Furthermore, the similarity measure could help the recommendation engine to find movies with similar vocabulary. </p>
 
         
            
           
-           <p> We start this section of by looking at the 10 happiest movies and the10 most unhappy movies. Looking at the figures donw bellow we cant say that the results are suprising. The movies with the highest average sentiment score are all so called "feel good movies", which any sane perason would expect before hand to have quite happy vocabulary. When taking a look at the movies with the  lowest sentiment score, we are not suprised. These are all movies that are eather action or horror movies, where the movie envolves around death or war.
-           
+           <p> In this section we will focuse on the sentiment analysis of the manuscripts. The sentiment of each manuscript is calculated using the happiness rank from the LabMT wordlist.  It's available as supplementary material from 
+                <a class = "makeWhite" href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0026752#s2"> 
+                      <span class="download"><strong>  Temporal Patterns of Happiness and Information in a Global Social Network: Hedonometrics and Twitter </strong> </span> 
+                </a> (Data Set S1).
 
+             We start off by looking at the 10 movies with the 'happiest' and 'unhappiest' movie manuscripts. Happy in the sens that the mean sentiment value of the manuscrip is high and vice versa for the 'unhappy' manuscripts. Looking at the figures down bellow we can't say that the results are suprising. The movies with the highest average sentiment score are all so called "feel good movies", which any sane person would expect, before hand, to have quite happy vocabulary. When taking a look at the movies with the  lowest sentiment score, we are not suprised. These are all movies that are either action or horror movies, where the movie envolves around something dark like death or war. </p>
+           <p>
             Next we take a look at the variance. If a movie has a large variance in the sentiment values of its manuscript then the vocabulary used in the manuscript must be quite diversed, meaning that that the movie  must contain a lot of happy and unhappy words. The 10 movies with most variance are movies that are considered as a Thriller/Action/Crime/Horror and a Comedy/Romance. Like for example the movie Deadpool; it is a dark comedy which is also consider to be a action or a adventure movie. Deadpool is a comedy that contains a lot of violence and so it is understandable that the happiness rank of the words used in the manuscript vary alot.
 
 
