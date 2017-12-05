@@ -7,17 +7,10 @@ var movie_search;
 
 // til ad vita hvada mynd var verid ad nota
 function choose(choice) {
-    console.log("================ choose ========================");
-    console.log(choice)
-    console.log(choice.target.id)
-    console.log('alrighty');
+
 
     selected_movie = choice.target.id.replace(new RegExp("_", 'g'), " ");
-    //$('#' + choice.target.parentNode.id).css('filter', 'none');
-    console.log('======================');
-    console.log(choice.target.id)
-    console.log(previous_movie)
-    console.log('======================');
+ 
 
 
 
@@ -56,7 +49,7 @@ function choose(choice) {
     // update the previous movie
     previous_movie = selected_movie_id
 
-    console.log("================ choose ========================");
+   
 }
 
 
@@ -71,13 +64,12 @@ $('#term').focus(function() {
 
 
 var getPoster = function(val) {
-    console.log('--------- getPoster ----------');
+    
     var film = val //$('#term').val();
 
     var idd = val.replace(/['.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
     var idd = idd.replace(new RegExp(" ", 'g'), "_");
-    console.log('IDDDDDDD');
-    console.log(idd);
+  
 
     if (film == '') {
 
@@ -91,9 +83,9 @@ var getPoster = function(val) {
             if (json != "Nothing found.") {
 
                 $('#poster').append('<img  id =' + idd + ' src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >')
-                console.log(idd)
+                
                 $('#' + idd).on('click', choose);
-                console.log(selected_movie);
+                
 
             } else {
                 $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=goonies&callback=?", function(json) {
@@ -106,7 +98,7 @@ var getPoster = function(val) {
 
     }
 
-    console.log('--------- getPoster ends----------');
+    
     return false;
 }
 
@@ -120,7 +112,7 @@ function list_shortest_paths() {
         //console.log(json); // this will show the info it in firebug console
 
         movies_recomendations = json
-        console.log(movies_recomendations)
+        
 
 
 
@@ -132,13 +124,12 @@ function list_shortest_paths() {
             // get the value from the network input box (that is what node we calculate from)
             var input = document.getElementById('term').value
             input = input.replace(/['.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").toLowerCase();
-            console.log(input)
-            //var input = 'Vampires Suck'
+            
+           
 
 
             movies_orderd = movies_recomendations[input]
-            console.log(movies_orderd)
-            console.log(movies_orderd)
+
 
 
 
@@ -162,8 +153,7 @@ function list_shortest_paths() {
 
 
         } catch (err) {
-            console.log(err)
-            console.log('Error')
+           
 
         }
     });
@@ -206,7 +196,6 @@ $('#term').keyup(function(event) {
 // autocomplete function, to get the possible movies
 $.getJSON("all_movies.json", function(json) {
     var data = Object.keys(json)
-    console.log(json)
     //console.log(data)
     $("#term").autocomplete({
         source: function(request, response) {
